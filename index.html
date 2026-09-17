@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Mon petit chemin Montessori</title>
+  <title>Mon Montessori</title>
 
   <style>
     * {
@@ -13,340 +13,169 @@
 
     body {
       margin: 0;
-      min-height: 100vh;
-      font-family: "Segoe UI", sans-serif;
-      color: #3f4037;
-      background: #f3ecdf;
+      font-family: Arial, sans-serif;
+      background: #f5f1e8;
+      color: #3f463d;
     }
 
-    .app {
-      min-height: 100vh;
-      display: flex;
-    }
-
-    /* MENU */
-
-    .sidebar {
-      width: 250px;
-      min-height: 100vh;
-      padding: 35px 22px;
-      background: #e7e0d1;
-      border-right: 1px solid #d4ccb9;
-    }
-
-    .logo {
+    header {
+      background: #dce5d5;
+      padding: 25px 20px;
       text-align: center;
-      margin-bottom: 45px;
+      border-bottom: 2px solid #c8d3c0;
     }
 
-    .logo-symbol {
-      font-size: 42px;
-      margin-bottom: 8px;
-    }
-
-    .logo h1 {
+    header h1 {
       margin: 0;
-      font-family: Georgia, serif;
-      font-size: 23px;
-      font-weight: normal;
-      color: #405b45;
-    }
-
-    .logo p {
-      margin: 8px 0 0;
-      font-size: 12px;
-      letter-spacing: 1px;
-      color: #777566;
-    }
-
-    .menu {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .menu button {
-      border: none;
-      background: transparent;
-      padding: 13px 16px;
-      border-radius: 14px;
-      text-align: left;
-      font-size: 15px;
-      color: #55574d;
-      cursor: pointer;
-    }
-
-    .menu button:hover {
-      background: #dcd6c7;
-    }
-
-    .menu button.active {
-      background: #cfd9c9;
-      color: #35553b;
+      font-size: 30px;
       font-weight: 600;
     }
 
-    /* CONTENU */
+    header p {
+      margin: 8px 0 0;
+      font-size: 15px;
+    }
 
-    .content {
-      flex: 1;
-      padding: 55px 65px;
-      max-width: 1400px;
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 25px 18px;
     }
 
     .welcome {
-      margin-bottom: 40px;
-    }
-
-    .welcome small {
-      color: #8b816f;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-size: 11px;
+      text-align: center;
+      margin-bottom: 25px;
     }
 
     .welcome h2 {
-      margin: 12px 0 8px;
-      font-family: Georgia, serif;
-      font-weight: normal;
-      font-size: 42px;
-      color: #405b45;
+      font-size: 24px;
+      margin-bottom: 8px;
     }
 
     .welcome p {
-      margin: 0;
-      color: #777566;
-      font-size: 16px;
+      margin-top: 0;
+      color: #687063;
     }
 
-    /* CARTES */
-
-    .cards {
+    .categories {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      margin-bottom: 35px;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
     }
 
     .card {
-      background: #fbf7ed;
-      border: 1px solid #e3dccd;
-      border-radius: 22px;
-      padding: 27px;
-      box-shadow: 0 5px 18px rgba(72, 65, 48, 0.06);
+      background: white;
+      border-radius: 18px;
+      padding: 22px;
+      min-height: 150px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      cursor: pointer;
+      transition: transform 0.2s ease;
     }
 
-    .card-icon {
-      font-size: 28px;
-      margin-bottom: 15px;
+    .card:hover {
+      transform: translateY(-3px);
+    }
+
+    .icon {
+      font-size: 38px;
+      margin-bottom: 10px;
     }
 
     .card h3 {
-      margin: 0 0 7px;
-      font-family: Georgia, serif;
-      font-size: 22px;
-      font-weight: normal;
-      color: #4d5948;
+      margin: 0 0 8px;
+      font-size: 19px;
     }
 
     .card p {
       margin: 0;
       font-size: 14px;
-      line-height: 1.5;
-      color: #777566;
+      color: #73786e;
+      line-height: 1.4;
     }
 
-    /* PETIT CHEMIN */
-
-    .path {
-      background: #e4eadf;
-      border-radius: 25px;
-      padding: 30px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .path h3 {
-      margin: 0 0 8px;
-      font-family: Georgia, serif;
-      font-size: 25px;
-      font-weight: normal;
-      color: #405b45;
-    }
-
-    .path p {
-      margin: 0;
-      color: #687064;
-    }
-
-    .leaves {
-      position: absolute;
-      right: 35px;
-      bottom: 15px;
-      font-size: 48px;
-      opacity: 0.55;
-    }
-
-    /* RESPONSIVE */
-
-    @media (max-width: 900px) {
-
-      .sidebar {
-        width: 190px;
-      }
-
-      .content {
-        padding: 40px 30px;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 650px) {
-
-      .app {
-        display: block;
-      }
-
-      .sidebar {
-        width: 100%;
-        min-height: auto;
-        padding: 20px;
-      }
-
-      .logo {
-        margin-bottom: 20px;
-      }
-
-      .menu {
-        flex-direction: row;
-        overflow-x: auto;
-      }
-
-      .menu button {
-        white-space: nowrap;
-      }
-
-      .content {
-        padding: 30px 20px;
-      }
-
-      .welcome h2 {
-        font-size: 32px;
-      }
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      color: #7b8177;
+      font-size: 13px;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="app">
+  <header>
+    <h1>🌿 Mon Montessori</h1>
+    <p>Observer · Accompagner · Faire grandir</p>
+  </header>
 
-    <aside class="sidebar">
+  <main>
 
-      <div class="logo">
-        <div class="logo-symbol">🌿</div>
-        <h1>Mon petit chemin</h1>
-        <p>Montessori</p>
+    <section class="welcome">
+      <h2>Bienvenue dans ton espace Montessori</h2>
+      <p>
+        Suivi des enfants, matériel, présentations et observations
+      </p>
+    </section>
+
+    <section class="categories">
+
+      <div class="card" onclick="alert('Espace Enfants')">
+        <div class="icon">👶</div>
+        <h3>Enfants</h3>
+        <p>
+          Créer un profil et suivre les observations et acquisitions.
+        </p>
       </div>
 
-      <nav class="menu">
-
-        <button class="active">🏡 Accueil</button>
-
-        <button>👧 Mes enfants</button>
-
-        <button>🌱 Progression</button>
-
-        <button>🧺 Matériel</button>
-
-        <button>📖 Carnet</button>
-
-      </nav>
-
-    </aside>
-
-
-    <main class="content">
-
-      <section class="welcome">
-
-        <small>Observer · Accompagner · Grandir</small>
-
-        <h2>Mon petit chemin Montessori</h2>
-
+      <div class="card" onclick="alert('Espace Matériel')">
+        <div class="icon">🧺</div>
+        <h3>Matériel Montessori</h3>
         <p>
-          Un espace doux pour observer les enfants,
-          suivre leur évolution et accompagner chaque étape.
+          Retrouver le matériel par aire de développement et par âge.
         </p>
+      </div>
 
-      </section>
-
-
-      <section class="cards">
-
-        <div class="card">
-
-          <div class="card-icon">👧</div>
-
-          <h3>Mes enfants</h3>
-
-          <p>
-            Retrouvez les profils et le cheminement
-            de chaque enfant accueilli.
-          </p>
-
-        </div>
-
-
-        <div class="card">
-
-          <div class="card-icon">📷</div>
-
-          <h3>Nouvelle observation</h3>
-
-          <p>
-            Notez simplement un moment observé,
-            une acquisition ou une nouvelle étape.
-          </p>
-
-        </div>
-
-
-        <div class="card">
-
-          <div class="card-icon">🌱</div>
-
-          <h3>Progression</h3>
-
-          <p>
-            Visualisez le chemin parcouru dans
-            les différents domaines de développement.
-          </p>
-
-        </div>
-
-      </section>
-
-
-      <section class="path">
-
-        <h3>Le chemin de chaque enfant est unique</h3>
-
+      <div class="card" onclick="alert('Espace Observations')">
+        <div class="icon">🌱</div>
+        <h3>Observations</h3>
         <p>
-          Observer sans comparer · proposer sans imposer ·
-          accompagner avec confiance.
+          Noter les progrès, intérêts, difficultés et nouvelles acquisitions.
         </p>
+      </div>
 
-        <div class="leaves">🍃 🌿</div>
+      <div class="card" onclick="alert('Espace Activités')">
+        <div class="icon">🎨</div>
+        <h3>Activités</h3>
+        <p>
+          Préparer des propositions adaptées à chaque enfant.
+        </p>
+      </div>
 
-      </section>
+      <div class="card" onclick="alert('Espace Progression')">
+        <div class="icon">📖</div>
+        <h3>Progression Montessori</h3>
+        <p>
+          Visualiser les acquisitions de 0 à 3 ans et de 3 à 6 ans.
+        </p>
+      </div>
 
-    </main>
+      <div class="card" onclick="alert('Espace Notes')">
+        <div class="icon">📝</div>
+        <h3>Notes</h3>
+        <p>
+          Garder les informations importantes concernant les enfants.
+        </p>
+      </div>
 
-  </div>
+    </section>
+
+  </main>
+
+  <footer>
+    🌿 Une approche douce, autonome et respectueuse de l'enfant
+  </footer>
 
 </body>
 </html>
