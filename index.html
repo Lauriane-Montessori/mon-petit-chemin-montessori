@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mon petit chemin Montessori</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Segoe UI", sans-serif;
+      color: #3f4037;
+      background: #f3ecdf;
+    }
+
+    .app {
+      min-height: 100vh;
+      display: flex;
+    }
+
+    /* MENU */
+
+    .sidebar {
+      width: 250px;
+      min-height: 100vh;
+      padding: 35px 22px;
+      background: #e7e0d1;
+      border-right: 1px solid #d4ccb9;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .logo-symbol {
+      font-size: 42px;
+      margin-bottom: 8px;
+    }
+
+    .logo h1 {
+      margin: 0;
+      font-family: Georgia, serif;
+      font-size: 23px;
+      font-weight: normal;
+      color: #405b45;
+    }
+
+    .logo p {
+      margin: 8px 0 0;
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: #777566;
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .menu button {
+      border: none;
+      background: transparent;
+      padding: 13px 16px;
+      border-radius: 14px;
+      text-align: left;
+      font-size: 15px;
+      color: #55574d;
+      cursor: pointer;
+    }
+
+    .menu button:hover {
+      background: #dcd6c7;
+    }
+
+    .menu button.active {
+      background: #cfd9c9;
+      color: #35553b;
+      font-weight: 600;
+    }
+
+    /* CONTENU */
+
+    .content {
+      flex: 1;
+      padding: 55px 65px;
+      max-width: 1400px;
+    }
+
+    .welcome {
+      margin-bottom: 40px;
+    }
+
+    .welcome small {
+      color: #8b816f;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+
+    .welcome h2 {
+      margin: 12px 0 8px;
+      font-family: Georgia, serif;
+      font-weight: normal;
+      font-size: 42px;
+      color: #405b45;
+    }
+
+    .welcome p {
+      margin: 0;
+      color: #777566;
+      font-size: 16px;
+    }
+
+    /* CARTES */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-bottom: 35px;
+    }
+
+    .card {
+      background: #fbf7ed;
+      border: 1px solid #e3dccd;
+      border-radius: 22px;
+      padding: 27px;
+      box-shadow: 0 5px 18px rgba(72, 65, 48, 0.06);
+    }
+
+    .card-icon {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin: 0 0 7px;
+      font-family: Georgia, serif;
+      font-size: 22px;
+      font-weight: normal;
+      color: #4d5948;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #777566;
+    }
+
+    /* PETIT CHEMIN */
+
+    .path {
+      background: #e4eadf;
+      border-radius: 25px;
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .path h3 {
+      margin: 0 0 8px;
+      font-family: Georgia, serif;
+      font-size: 25px;
+      font-weight: normal;
+      color: #405b45;
+    }
+
+    .path p {
+      margin: 0;
+      color: #687064;
+    }
+
+    .leaves {
+      position: absolute;
+      right: 35px;
+      bottom: 15px;
+      font-size: 48px;
+      opacity: 0.55;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+
+      .sidebar {
+        width: 190px;
+      }
+
+      .content {
+        padding: 40px 30px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
+
+      .app {
+        display: block;
+      }
+
+      .sidebar {
+        width: 100%;
+        min-height: auto;
+        padding: 20px;
+      }
+
+      .logo {
+        margin-bottom: 20px;
+      }
+
+      .menu {
+        flex-direction: row;
+        overflow-x: auto;
+      }
+
+      .menu button {
+        white-space: nowrap;
+      }
+
+      .content {
+        padding: 30px 20px;
+      }
+
+      .welcome h2 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="app">
+
+    <aside class="sidebar">
+
+      <div class="logo">
+        <div class="logo-symbol">🌿</div>
+        <h1>Mon petit chemin</h1>
+        <p>Montessori</p>
+      </div>
+
+      <nav class="menu">
+
+        <button class="active">🏡 Accueil</button>
+
+        <button>👧 Mes enfants</button>
+
+        <button>🌱 Progression</button>
+
+        <button>🧺 Matériel</button>
+
+        <button>📖 Carnet</button>
+
+      </nav>
+
+    </aside>
+
+
+    <main class="content">
+
+      <section class="welcome">
+
+        <small>Observer · Accompagner · Grandir</small>
+
+        <h2>Mon petit chemin Montessori</h2>
+
+        <p>
+          Un espace doux pour observer les enfants,
+          suivre leur évolution et accompagner chaque étape.
+        </p>
+
+      </section>
+
+
+      <section class="cards">
+
+        <div class="card">
+
+          <div class="card-icon">👧</div>
+
+          <h3>Mes enfants</h3>
+
+          <p>
+            Retrouvez les profils et le cheminement
+            de chaque enfant accueilli.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-icon">📷</div>
+
+          <h3>Nouvelle observation</h3>
+
+          <p>
+            Notez simplement un moment observé,
+            une acquisition ou une nouvelle étape.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-icon">🌱</div>
+
+          <h3>Progression</h3>
+
+          <p>
+            Visualisez le chemin parcouru dans
+            les différents domaines de développement.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <section class="path">
+
+        <h3>Le chemin de chaque enfant est unique</h3>
+
+        <p>
+          Observer sans comparer · proposer sans imposer ·
+          accompagner avec confiance.
+        </p>
+
+        <div class="leaves">🍃 🌿</div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
