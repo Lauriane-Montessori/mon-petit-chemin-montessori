@@ -8,695 +8,181 @@
 :root{
  --green:#607668;--green-dark:#40564a;--green-soft:#e8eee9;--cream:#f7f4ec;
  --paper:#fffdf8;--ink:#33423a;--muted:#718077;--line:#d9dfd8;
- --gold:#b18a4b;--rose:#a86d67;--blue:#6d8491;--shadow:0 8px 24px rgba(50,65,56,.08)
+ --gold:#b18a4b;--rose:#a86d67;--blue:#6d8491;
+ --shadow:0 8px 24px rgba(50,65,56,.08)
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--cream);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.45}
-button,input,select,textarea{font:inherit}
-button{cursor:pointer}
+button,input,select,textarea{font:inherit}button{cursor:pointer}
 header{background:linear-gradient(135deg,#4e6558,#819689);color:#fff;padding:22px 18px;position:sticky;top:0;z-index:20;box-shadow:0 2px 12px #0001}
-header h1{font:700 29px Georgia,serif;margin:0}
-header p{margin:5px 0 0;opacity:.92}
+header h1{font:700 29px Georgia,serif;margin:0}header p{margin:5px 0 0;opacity:.92}
 nav{display:flex;gap:7px;overflow:auto;background:#fff;border-bottom:1px solid var(--line);padding:9px;position:sticky;top:91px;z-index:19}
 nav button{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:22px;padding:9px 13px;white-space:nowrap}
 nav button.active,.primary{background:var(--green)!important;color:#fff!important;border-color:var(--green)!important}
 main{max-width:1180px;margin:auto;padding:20px 15px 50px}
 .view{display:none}.view.active{display:block}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow);margin-bottom:15px}
-h2,h3{font-family:Georgia,serif;color:var(--green-dark);margin-top:0}
-h2{font-size:25px}h3{font-size:20px}
+h2,h3{font-family:Georgia,serif;color:var(--green-dark);margin-top:0}h2{font-size:25px}h3{font-size:20px}
 .toolbar{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-bottom:15px}
-.toolbar>*{margin:0}
 button{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:10px;padding:9px 13px}
-button:hover{filter:brightness(.98)}
-.danger{border-color:#dfb8b3;color:#8e514b}.small{padding:6px 9px;font-size:13px}
-.muted{color:var(--muted);font-size:14px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+button:hover{filter:brightness(.98)}.danger{border-color:#dfb8b3;color:#8e514b}.small{padding:6px 9px;font-size:13px}
+.muted{color:var(--muted);font-size:14px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
 .stat{font-size:30px;font-weight:700;color:var(--green)}
 label{display:block;font-weight:600;font-size:14px;margin-bottom:5px}
 input,select,textarea{width:100%;border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px;color:var(--ink)}
-textarea{min-height:90px;resize:vertical}
-.formgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
-.full{grid-column:1/-1}
+textarea{min-height:90px;resize:vertical}.formgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}.full{grid-column:1/-1}
 .actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
 .badge{display:inline-block;border-radius:20px;padding:4px 9px;font-size:12px;background:var(--green-soft);color:var(--green-dark);margin:2px}
-.status-presented{background:#edf0ee;color:#52645a}
-.status-working{background:#fff1d8;color:#8a672b}
-.status-mastered{background:#dfece2;color:#386044}
-.status-consolidate{background:#f7e4e1;color:#8b4d47}
-.status-not{background:#eee;color:#68716d}
-.progress{height:9px;background:#e5e8e5;border-radius:99px;overflow:hidden}
+.status-presented{background:#edf0ee;color:#52645a}.status-working{background:#fff1d8;color:#8a672b}
+.status-mastered{background:#dfece2;color:#386044}.status-consolidate{background:#f7e4e1;color:#8b4d47}
+.status-not{background:#eee;color:#68716d}.progress{height:9px;background:#e5e8e5;border-radius:99px;overflow:hidden}
 .progress>span{display:block;height:100%;background:var(--green);border-radius:99px}
 .material-row{border:1px solid var(--line);border-radius:14px;background:#fff;padding:13px;margin:8px 0}
 .material-head{display:flex;gap:10px;justify-content:space-between;align-items:flex-start}
-.material-name{font-weight:700;color:var(--green-dark)}
-.meta{font-size:13px;color:var(--muted)}
+.material-name{font-weight:700;color:var(--green-dark)}.meta{font-size:13px;color:var(--muted)}
 .filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:9px;margin-bottom:13px}
-.area-block{margin:17px 0}
-.area-title{display:flex;align-items:center;gap:9px;border-bottom:1px solid var(--line);padding-bottom:7px}
-.age-group{margin:10px 0 4px;color:var(--gold);font-weight:700}
-.empty{padding:25px;text-align:center;color:var(--muted)}
+.area-block{margin:17px 0}.area-title{display:flex;align-items:center;gap:9px;border-bottom:1px solid var(--line);padding-bottom:7px}
+.age-group{margin:10px 0 4px;color:var(--gold);font-weight:700}.empty{padding:25px;text-align:center;color:var(--muted)}
 .note{background:#f3f0e7;border-left:4px solid var(--gold);padding:10px 12px;border-radius:8px}
 .photo{width:72px;height:72px;object-fit:cover;border-radius:12px;border:1px solid var(--line)}
-.profile-top{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
-.profile-top .photo{width:96px;height:96px}
+.profile-top{display:flex;gap:16px;align-items:center;flex-wrap:wrap}.profile-top .photo{width:96px;height:96px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.gallery-item{background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px}.gallery-item img{width:100%;height:135px;object-fit:cover;border-radius:10px}
 .modal{position:fixed;inset:0;background:#25352b99;display:none;align-items:flex-start;justify-content:center;padding:25px 12px;overflow:auto;z-index:50}
-.modal.open{display:flex}
-.modal-box{background:var(--paper);width:min(920px,100%);border-radius:20px;padding:19px;box-shadow:0 20px 60px #0004}
-.modal-close{float:right}
-.report{background:#fffdf8;color:#2f3c35}
-.report h1{font-family:Georgia,serif;color:#40584b}
-.report-section{margin:22px 0}
-.report-item{border-bottom:1px solid #ddd;padding:9px 0}
-.report .progress{margin-top:5px}
-@media print{
- body{background:white}
- header,nav,.no-print{display:none!important}
- main{max-width:none;padding:0}
- .view{display:none!important}
- #view-profile.printing{display:block!important}
- #profileDetail{box-shadow:none;border:0}
- .modal{display:none!important}
-}
-@media(max-width:600px){
- header h1{font-size:24px}
- nav{top:83px}
- .card{padding:14px}
-}
+.modal.open{display:flex}.modal-box{background:var(--paper);width:min(920px,100%);border-radius:20px;padding:19px;box-shadow:0 20px 60px #0004}
+.modal-close{float:right}.report{background:#fffdf8;color:#2f3c35}.report h1{font-family:Georgia,serif;color:#40584b}
+.report-section{margin:22px 0}.report-item{border-bottom:1px solid #ddd;padding:9px 0}
+@media print{body{background:white}header,nav,.no-print{display:none!important}main{max-width:none;padding:0}.view{display:none!important}#view-profile.printing{display:block!important}}
+@media(max-width:600px){header h1{font-size:24px}nav{top:83px}.card{padding:14px}}
 </style>
 </head>
 <body>
-<header>
-  <h1>Mon Petit Chemin Montessori</h1>
-  <p>Observer · accompagner · faire grandir l'autonomie</p>
-</header>
-
-<nav id="nav">
- <button data-view="home">Accueil</button>
- <button data-view="children">Enfants</button>
- <button data-view="catalog">Tout le matériel</button>
- <button data-view="observations">Observations</button>
- <button data-view="activities">Activités</button>
- <button data-view="notes">Notes</button>
+<header><h1>Mon Petit Chemin Montessori</h1><p>Observer · accompagner · faire grandir l'autonomie 🌿</p></header>
+<nav>
+<button data-view="home">Accueil</button><button data-view="children">Enfants</button>
+<button data-view="catalog">Tout le matériel</button><button data-view="observations">Observations</button>
+<button data-view="activities">Activités</button><button data-view="gallery">Galerie</button><button data-view="notes">Notes</button>
 </nav>
-
 <main>
+
 <section id="view-home" class="view">
- <div class="card">
-  <h2>Bienvenue 🌿</h2>
-  <p>Cette version est pensée autour du <strong>profil de chaque enfant</strong> : le matériel Montessori est directement suivi par aire, âge, état de progression, barre de progression, concentration et observations.</p>
-  <div class="grid">
-   <div class="card"><div class="stat" id="homeChildren">0</div><div>enfant(s)</div></div>
-   <div class="card"><div class="stat" id="homeMaterials">0</div><div>matériel(s) dans le référentiel</div></div>
-   <div class="card"><div class="stat" id="homeObservations">0</div><div>observation(s)</div></div>
-   <div class="card"><div class="stat" id="homeMastered">0</div><div>matériel(s) acquis</div></div>
-  </div>
- </div>
- <div class="card">
-  <h3>Principe</h3>
-  <p>Tu crées un enfant, puis tu ouvres son profil. Là, tu retrouves <strong>tout le matériel Montessori par aire et par âge</strong>. Pour chaque matériel, tu peux noter l'état, le niveau de progression, la concentration observée et une observation libre.</p>
-  <p class="note">Les données sont enregistrées sur cet appareil dans le navigateur. Fais régulièrement une sauvegarde des données depuis les options du catalogue si tu changes d'appareil.</p>
- </div>
+<div class="card"><h2>Bienvenue 🌿</h2>
+<p>Un carnet Montessori simple, visuel et personnalisable pour suivre chaque enfant, le matériel présenté, les acquisitions, les observations et les activités.</p>
+<div class="grid">
+<div class="card"><div class="stat" id="homeChildren">0</div>enfant(s)</div>
+<div class="card"><div class="stat" id="homeMaterials">0</div>matériel(s)</div>
+<div class="card"><div class="stat" id="homeObservations">0</div>observation(s)</div>
+<div class="card"><div class="stat" id="homeMastered">0</div>matériel(s) acquis</div>
+</div></div>
+<div class="card"><h3>🌱 Tes données</h3><p class="note">Tout est enregistré localement dans ce navigateur. Utilise <strong>Sauvegarder</strong> avant de changer d'appareil ou de navigateur.</p></div>
 </section>
 
 <section id="view-children" class="view">
- <div class="toolbar">
-  <h2 style="margin-right:auto">Enfants</h2>
-  <button class="primary" onclick="openChildForm()">+ Ajouter un enfant</button>
- </div>
- <div id="childrenList" class="grid"></div>
-</section>
+<div class="toolbar"><h2 style="margin-right:auto">Enfants</h2><button class="primary" onclick="openChildForm()">+ Ajouter un enfant</button></div>
+<div id="childrenList" class="grid"></div></section>
 
 <section id="view-profile" class="view">
- <div class="toolbar no-print">
-  <button onclick="showView('children')">← Enfants</button>
-  <button class="primary" onclick="printCurrentReport()">🖨️ Imprimer le compte rendu</button>
- </div>
- <div id="profileDetail" class="card"></div>
-</section>
+<div class="toolbar no-print"><button onclick="showView('children')">← Enfants</button><button class="primary" onclick="printCurrentReport()">🖨️ Imprimer le compte rendu</button></div>
+<div id="profileDetail" class="card"></div></section>
 
 <section id="view-catalog" class="view">
- <div class="toolbar">
-  <h2 style="margin-right:auto">Tout le matériel Montessori</h2>
-  <button class="primary" onclick="openMaterialForm()">+ Ajouter du matériel</button>
-  <button onclick="exportData()">Sauvegarder les données</button>
-  <button onclick="importData()">Restaurer une sauvegarde</button>
- </div>
- <div class="card">
-  <p class="muted">Référentiel de départ 0–6 ans, organisé par aire et âge. Tu peux <strong>modifier, supprimer ou ajouter</strong> ce que tu veux : le catalogue n'est jamais figé.</p>
-  <div class="filters">
-   <input id="catSearch" placeholder="Rechercher un matériel…" oninput="renderCatalog()">
-   <select id="catArea" onchange="renderCatalog()"><option value="">Toutes les aires</option></select>
-   <select id="catAge" onchange="renderCatalog()"><option value="">Tous les âges</option><option>0–3 ans</option><option>3–6 ans</option></select>
-  </div>
-  <div id="catalogList"></div>
- </div>
+<div class="toolbar"><h2 style="margin-right:auto">Tout le matériel Montessori</h2>
+<button class="primary" onclick="openMaterialForm()">+ Ajouter</button><button onclick="exportData()">💾 Sauvegarder</button><button onclick="importData()">↥ Restaurer</button></div>
+<div class="card"><p class="muted">Catalogue modifiable : ajoute tes propres présentations, descriptions et photos.</p>
+<div class="filters"><input id="catSearch" placeholder="Rechercher…" oninput="renderCatalog()"><select id="catArea" onchange="renderCatalog()"></select><select id="catAge" onchange="renderCatalog()"><option value="">Tous les âges</option><option>0–3 ans</option><option>3–6 ans</option></select></div>
+<div id="catalogList"></div></div></section>
+
+<section id="view-observations" class="view"><div class="toolbar"><h2 style="margin-right:auto">Observations</h2><button class="primary" onclick="openObservationForm()">+ Nouvelle observation</button></div><div id="observationsList"></div></section>
+<section id="view-activities" class="view"><div class="toolbar"><h2 style="margin-right:auto">Activités</h2><button class="primary" onclick="openActivityForm()">+ Nouvelle activité</button></div><div id="activitiesList"></div></section>
+
+<section id="view-gallery" class="view">
+<div class="toolbar"><h2 style="margin-right:auto">Galerie 🌿</h2><button class="primary" onclick="openGalleryForm()">+ Ajouter une image</button></div>
+<div class="card"><p class="muted">Ajoute des photos du matériel, des ambiances, des activités ou de tes supports. Elles restent sur cet appareil.</p><div id="galleryList" class="gallery"></div></div>
 </section>
 
-<section id="view-observations" class="view">
- <div class="toolbar"><h2 style="margin-right:auto">Observations</h2><button class="primary" onclick="openObservationForm()">+ Nouvelle observation</button></div>
- <div id="observationsList"></div>
-</section>
-
-<section id="view-activities" class="view">
- <div class="toolbar"><h2 style="margin-right:auto">Activités</h2><button class="primary" onclick="openActivityForm()">+ Nouvelle activité</button></div>
- <div id="activitiesList"></div>
-</section>
-
-<section id="view-notes" class="view">
- <div class="toolbar"><h2 style="margin-right:auto">Notes</h2><button class="primary" onclick="openNoteForm()">+ Nouvelle note</button></div>
- <div id="notesList"></div>
-</section>
+<section id="view-notes" class="view"><div class="toolbar"><h2 style="margin-right:auto">Notes</h2><button class="primary" onclick="openNoteForm()">+ Nouvelle note</button></div><div id="notesList"></div></section>
 </main>
-
 <div id="modal" class="modal" onclick="if(event.target===this)closeModal()"><div id="modalBox" class="modal-box"></div></div>
 
 <script>
-const KEY='mpcm_v4';
-const areas=[
- 'Vie pratique','Vie sensorielle','Langage','Mathématiques','Culture',
- 'Arts plastiques','Musique','Développement moteur','Vie sociale & émotionnelle',
- 'Nature et environnement','Nido / environnement préparé','Livres et littérature'
-];
+const KEY='mpcm_v5';
+const areas=['Vie pratique','Vie sensorielle','Langage','Mathématiques','Culture','Arts plastiques','Musique','Développement moteur','Vie sociale & émotionnelle','Nature et environnement','Nido / environnement préparé','Livres et littérature'];
 
 const MATERIALS=[
-/* NIDO / ENVIRONNEMENT */
-['Nido / environnement préparé','0–3 ans','Matelas au sol / aire de mouvement','0–6 mois'],
-['Nido / environnement préparé','0–3 ans','Miroir horizontal','0–6 mois'],
-['Nido / environnement préparé','0–3 ans','Barre de préhension au miroir','2–5 mois'],
-['Nido / environnement préparé','0–3 ans','Mobile Munari','0–6 semaines'],
-['Nido / environnement préparé','0–3 ans','Mobile des octaèdres','6–10 semaines'],
-['Nido / environnement préparé','0–3 ans','Mobile de Gobbi','2–4 mois'],
-['Nido / environnement préparé','0–3 ans','Mobile des danseurs','3–4 mois'],
-['Nido / environnement préparé','0–3 ans','Cloche sur ruban','2–5 mois'],
-['Nido / environnement préparé','0–3 ans','Hochet à saisir','3–6 mois'],
-['Nido / environnement préparé','0–3 ans','Panier à trésors / objets variés','6–12 mois'],
-['Nido / environnement préparé','0–3 ans','Petite bibliothèque frontale','6–36 mois'],
-['Nido / environnement préparé','0–3 ans','Porte-manteau / patères à hauteur d’enfant','12–36 mois'],
-['Nido / environnement préparé','0–3 ans','Table et chaise adaptées','12–36 mois'],
-['Nido / environnement préparé','0–3 ans','Tour d’observation sécurisée','18–36 mois'],
-
-/* MOUVEMENT */
-['Développement moteur','0–3 ans','Tapis de mouvement','0–12 mois'],
-['Développement moteur','0–3 ans','Barre de traction basse','8–14 mois'],
-['Développement moteur','0–3 ans','Poussette / chariot de marche stable','9–18 mois'],
-['Développement moteur','0–3 ans','Escalier / marche d’entraînement','12–24 mois'],
-['Développement moteur','0–3 ans','Plateau d’équilibre','18–36 mois'],
-['Développement moteur','0–3 ans','Ligne au sol','18–36 mois'],
-['Développement moteur','0–3 ans','Marcher sur une ligne','18–36 mois'],
-['Développement moteur','0–3 ans','Porter un plateau','18–36 mois'],
-['Développement moteur','0–3 ans','Porter une chaise','18–36 mois'],
-['Développement moteur','0–3 ans','Transporter un objet avec les deux mains','12–24 mois'],
-['Développement moteur','3–6 ans','Marcher sur la ligne avec variations','3–6 ans'],
-['Développement moteur','3–6 ans','Jeux de silence','3–6 ans'],
-['Développement moteur','3–6 ans','Exercices de grâce et courtoisie en mouvement','3–6 ans'],
-
-/* VIE PRATIQUE */
-['Vie pratique','0–3 ans','Transvasement gros éléments à la main','12–18 mois'],
-['Vie pratique','0–3 ans','Transvasement cuillère à grosse poignée','18–24 mois'],
-['Vie pratique','0–3 ans','Transvasement avec petite cruche','18–30 mois'],
-['Vie pratique','0–3 ans','Verser de l’eau d’une petite cruche','20–36 mois'],
-['Vie pratique','0–3 ans','Éponger une petite quantité d’eau','18–30 mois'],
-['Vie pratique','0–3 ans','Laver une table','24–36 mois'],
-['Vie pratique','0–3 ans','Laver un objet','24–36 mois'],
-['Vie pratique','0–3 ans','Essuyer une table','18–30 mois'],
-['Vie pratique','0–3 ans','Balayer','18–36 mois'],
-['Vie pratique','0–3 ans','Épousseter','18–36 mois'],
-['Vie pratique','0–3 ans','Nettoyer un miroir','24–36 mois'],
-['Vie pratique','0–3 ans','Ouvrir / fermer des contenants','12–24 mois'],
-['Vie pratique','0–3 ans','Boîte à ouverture simple','12–18 mois'],
-['Vie pratique','0–3 ans','Boîtes à couvercles variés','18–30 mois'],
-['Vie pratique','0–3 ans','Enfiler de gros anneaux','12–24 mois'],
-['Vie pratique','0–3 ans','Enfiler des perles larges','18–30 mois'],
-['Vie pratique','0–3 ans','Pince à gros objets','18–30 mois'],
-['Vie pratique','0–3 ans','Pince à épiler / petits objets','24–36 mois'],
-['Vie pratique','0–3 ans','Verser des graines','24–36 mois'],
-['Vie pratique','0–3 ans','Trier / transférer avec une cuillère','18–30 mois'],
-['Vie pratique','0–3 ans','Se laver les mains','18–36 mois'],
-['Vie pratique','0–3 ans','Se moucher','24–36 mois'],
-['Vie pratique','0–3 ans','Se brosser les dents','18–36 mois'],
-['Vie pratique','0–3 ans','Se servir à boire','18–36 mois'],
-['Vie pratique','0–3 ans','Manger avec une cuillère','12–24 mois'],
-['Vie pratique','0–3 ans','Utiliser une fourchette','18–30 mois'],
-['Vie pratique','0–3 ans','Mettre / enlever son manteau','24–36 mois'],
-['Vie pratique','0–3 ans','Mettre ses chaussures simples','24–36 mois'],
-['Vie pratique','0–3 ans','Bouton-pression','24–36 mois'],
-['Vie pratique','0–3 ans','Fermeture éclair','24–36 mois'],
-['Vie pratique','3–6 ans','Cadre d’habillage : gros boutons','2½–4 ans'],
-['Vie pratique','3–6 ans','Cadre d’habillage : petits boutons','3–5 ans'],
-['Vie pratique','3–6 ans','Cadre d’habillage : fermeture éclair','2½–4 ans'],
-['Vie pratique','3–6 ans','Cadre d’habillage : boutons-pression','2½–4 ans'],
-['Vie pratique','3–6 ans','Cadre d’habillage : crochets','3–5 ans'],
-['Vie pratique','3–6 ans','Cadre d’habillage : boucles','3½–5 ans'],
-['Vie pratique','3–6 ans','Cadre d’habillage : nœuds','4–6 ans'],
-['Vie pratique','3–6 ans','Cadre d’habillage : lacets','4–6 ans'],
-['Vie pratique','3–6 ans','Verser liquide sans renverser','3–4 ans'],
-['Vie pratique','3–6 ans','Découper une banane / aliment mou','3–4 ans'],
-['Vie pratique','3–6 ans','Couper avec couteau adapté','4–6 ans'],
-['Vie pratique','3–6 ans','Tartiner','3–5 ans'],
-['Vie pratique','3–6 ans','Presser une éponge','3–4 ans'],
-['Vie pratique','3–6 ans','Laver du linge à la main','4–6 ans'],
-['Vie pratique','3–6 ans','Plier un tissu','3–5 ans'],
-['Vie pratique','3–6 ans','Coudre / point simple','4–6 ans'],
-['Vie pratique','3–6 ans','Arroser les plantes','3–6 ans'],
-['Vie pratique','3–6 ans','Planter / jardiner','3–6 ans'],
-['Vie pratique','3–6 ans','Polir le bois','3–6 ans'],
-['Vie pratique','3–6 ans','Polir le métal','3–6 ans'],
-['Vie pratique','3–6 ans','Nettoyer une chaussure','4–6 ans'],
-
-/* SENSORIEL */
-['Vie sensorielle','0–3 ans','Boîtes à sons simples','18–36 mois'],
-['Vie sensorielle','0–3 ans','Flacons à odeurs simples','24–36 mois'],
-['Vie sensorielle','0–3 ans','Tablettes rugueuses / lisse-rugueux','24–36 mois'],
-['Vie sensorielle','0–3 ans','Tri de couleurs simples','18–30 mois'],
-['Vie sensorielle','0–3 ans','Paires de couleurs','24–36 mois'],
-['Vie sensorielle','0–3 ans','Sac mystère tactile simple','24–36 mois'],
-['Vie sensorielle','0–3 ans','Solides à encastrer simples','12–24 mois'],
-['Vie sensorielle','0–3 ans','Tour rose – exploration initiale','24–36 mois'],
-['Vie sensorielle','0–3 ans','Escalier marron – exploration initiale','24–36 mois'],
-['Vie sensorielle','3–6 ans','Tour rose','2½–4 ans'],
-['Vie sensorielle','3–6 ans','Escalier marron','3–4½ ans'],
-['Vie sensorielle','3–6 ans','Blocs cylindriques 1','3–4 ans'],
-['Vie sensorielle','3–6 ans','Blocs cylindriques 2','3–4½ ans'],
-['Vie sensorielle','3–6 ans','Blocs cylindriques 3','3½–5 ans'],
-['Vie sensorielle','3–6 ans','Blocs cylindriques 4','3½–5 ans'],
-['Vie sensorielle','3–6 ans','Boîte de couleurs 1','2½–3½ ans'],
-['Vie sensorielle','3–6 ans','Boîte de couleurs 2','3–4 ans'],
-['Vie sensorielle','3–6 ans','Boîte de couleurs 3','4–6 ans'],
-['Vie sensorielle','3–6 ans','Tablettes de couleur / dégradés','3–6 ans'],
-['Vie sensorielle','3–6 ans','Tablettes rugueuses','3–5 ans'],
-['Vie sensorielle','3–6 ans','Tablettes barriques de poids','3½–5 ans'],
-['Vie sensorielle','3–6 ans','Boîtes à sons','3–5 ans'],
-['Vie sensorielle','3–6 ans','Cylindres de température','3½–5 ans'],
-['Vie sensorielle','3–6 ans','Flacons à odeurs','3–5 ans'],
-['Vie sensorielle','3–6 ans','Flacons à goûts','4–6 ans'],
-['Vie sensorielle','3–6 ans','Sac mystère','3–5 ans'],
-['Vie sensorielle','3–6 ans','Triangles constructifs','4–6 ans'],
-['Vie sensorielle','3–6 ans','Binôme géométrique','4–6 ans'],
-['Vie sensorielle','3–6 ans','Cabinet de géométrie','3–5 ans'],
-['Vie sensorielle','3–6 ans','Cartes de formes géométriques','3–5 ans'],
-['Vie sensorielle','3–6 ans','Solides géométriques','3½–5 ans'],
-['Vie sensorielle','3–6 ans','Table de Pythagore sensorielle','4½–6 ans'],
-
-/* LANGAGE */
-['Langage','0–3 ans','Objets réels nommés','12–24 mois'],
-['Langage','0–3 ans','Objets miniatures à nommer','18–30 mois'],
-['Langage','0–3 ans','Imagiers classifiés','18–36 mois'],
-['Langage','0–3 ans','Cartes de nomenclature simples','24–36 mois'],
-['Langage','0–3 ans','Jeux d’écoute / sons du quotidien','12–36 mois'],
-['Langage','0–3 ans','Jeu du « je vois » simple','24–36 mois'],
-['Langage','0–3 ans','Lettres rugueuses – premières rencontres','30–36 mois'],
-['Langage','0–3 ans','Alphabets mobiles – découverte','30–36 mois'],
-['Langage','3–6 ans','Enrichissement du vocabulaire / nomenclatures','3–6 ans'],
-['Langage','3–6 ans','Lettres rugueuses','3–4 ans'],
-['Langage','3–6 ans','Jeu des sons','3–4 ans'],
-['Langage','3–6 ans','Analyse des sons','3–5 ans'],
-['Langage','3–6 ans','Alphabets mobiles','3½–5 ans'],
-['Langage','3–6 ans','Lecture de mots phonétiques','4–5 ans'],
-['Langage','3–6 ans','Lecture de phrases','4½–6 ans'],
-['Langage','3–6 ans','Livre de lecture graduée','4–6 ans'],
-['Langage','3–6 ans','Étiquettes / objets correspondants','4–5 ans'],
-['Langage','3–6 ans','Nomenclatures classifiées','3–6 ans'],
-['Langage','3–6 ans','Fonctions des mots – introduction','5–6 ans'],
-['Langage','3–6 ans','Grammaire : nom / article / adjectif','5–6 ans'],
-['Langage','3–6 ans','Analyse de phrase','5–6 ans'],
-['Langage','3–6 ans','Prépositions / pronoms / verbes','5–6 ans'],
-['Langage','3–6 ans','Petits livrets de lecture','4–6 ans'],
-['Langage','3–6 ans','Dictées muettes','4½–6 ans'],
-
-/* MATH */
-['Mathématiques','0–3 ans','Tri un-à-un / correspondances','18–30 mois'],
-['Mathématiques','0–3 ans','Quantités 1–3 avec objets','24–36 mois'],
-['Mathématiques','0–3 ans','Barres numériques – exploration','30–36 mois'],
-['Mathématiques','0–3 ans','Chiffres rugueux – découverte','30–36 mois'],
-['Mathématiques','3–6 ans','Barres numériques','3–4 ans'],
-['Mathématiques','3–6 ans','Chiffres rugueux','3–4 ans'],
-['Mathématiques','3–6 ans','Association quantité / symbole 0–10','3½–4½ ans'],
-['Mathématiques','3–6 ans','Jeu des fuseaux','4–5 ans'],
-['Mathématiques','3–6 ans','Chiffres et jetons','4–5 ans'],
-['Mathématiques','3–6 ans','Jeu de mémoire de nombres','4½–5½ ans'],
-['Mathématiques','3–6 ans','Découpage des barres numériques','4–5 ans'],
-['Mathématiques','3–6 ans','Table de Seguin 1','4½–5½ ans'],
-['Mathématiques','3–6 ans','Table de Seguin 2','5–6 ans'],
-['Mathématiques','3–6 ans','Chaînes de 10','4½–5½ ans'],
-['Mathématiques','3–6 ans','Chaînes de 100','5–6 ans'],
-['Mathématiques','3–6 ans','Chaînes de 1000','5–6 ans'],
-['Mathématiques','3–6 ans','Cabinet de perles / perles dorées','4½–6 ans'],
-['Mathématiques','3–6 ans','Système décimal : plateau de présentation','4–5 ans'],
-['Mathématiques','3–6 ans','Jeu de la banque / change','4½–6 ans'],
-['Mathématiques','3–6 ans','Addition avec perles dorées','4½–6 ans'],
-['Mathématiques','3–6 ans','Soustraction avec perles dorées','4½–6 ans'],
-['Mathématiques','3–6 ans','Multiplication avec perles dorées','5–6 ans'],
-['Mathématiques','3–6 ans','Division avec perles dorées','5–6 ans'],
-['Mathématiques','3–6 ans','Tables de mémorisation de l’addition','5–6 ans'],
-['Mathématiques','3–6 ans','Tables de mémorisation de la soustraction','5–6 ans'],
-['Mathématiques','3–6 ans','Tables de mémorisation de la multiplication','5–6 ans'],
-['Mathématiques','3–6 ans','Tables de mémorisation de la division','5–6 ans'],
-['Mathématiques','3–6 ans','Planche de 100','4½–6 ans'],
-['Mathématiques','3–6 ans','Barres de 10 / système décimal','5–6 ans'],
-['Mathématiques','3–6 ans','Fractions – cercles fractionnés','5–6 ans'],
-
-/* CULTURE */
-['Culture','0–3 ans','Nomenclatures animaux','18–36 mois'],
-['Culture','0–3 ans','Nomenclatures végétaux','18–36 mois'],
-['Culture','0–3 ans','Nomenclatures objets du quotidien','18–36 mois'],
-['Culture','0–3 ans','Puzzle simple de géographie','24–36 mois'],
-['Culture','0–3 ans','Globe terrestre – terre / eau','24–36 mois'],
-['Culture','3–6 ans','Globe terre / eau','3–4 ans'],
-['Culture','3–6 ans','Globe continents / couleurs','3½–5 ans'],
-['Culture','3–6 ans','Planisphère des continents','3½–5 ans'],
-['Culture','3–6 ans','Cartes de nomenclature des continents','3½–5 ans'],
-['Culture','3–6 ans','Cartes de nomenclature des pays','4–6 ans'],
-['Culture','3–6 ans','Puzzle de l’Europe','4–6 ans'],
-['Culture','3–6 ans','Puzzles des continents','3½–6 ans'],
-['Culture','3–6 ans','Puzzle de la France','4–6 ans'],
-['Culture','3–6 ans','Nomenclature botanique','3½–6 ans'],
-['Culture','3–6 ans','Cabinet botanique','4–6 ans'],
-['Culture','3–6 ans','Nomenclature zoologique','3½–6 ans'],
-['Culture','3–6 ans','Parties de l’animal','4–6 ans'],
-['Culture','3–6 ans','Parties de la plante','4–6 ans'],
-['Culture','3–6 ans','Lignes du temps simples','4–6 ans'],
-['Culture','3–6 ans','Classement vivant / non-vivant','3–5 ans'],
-['Culture','3–6 ans','Classement vertébrés / invertébrés','4–6 ans'],
-['Culture','3–6 ans','Cycle de vie d’un animal','4–6 ans'],
-['Culture','3–6 ans','Cycle de vie d’une plante','4–6 ans'],
-['Culture','3–6 ans','Expériences eau / air / aimants','3–6 ans'],
-
-/* ARTS */
-['Arts plastiques','0–3 ans','Craies épaisses','18–36 mois'],
-['Arts plastiques','0–3 ans','Peinture libre','18–36 mois'],
-['Arts plastiques','0–3 ans','Pâte à modeler','24–36 mois'],
-['Arts plastiques','0–3 ans','Collage de gros éléments','24–36 mois'],
-['Arts plastiques','3–6 ans','Poinçonnage','3½–5 ans'],
-['Arts plastiques','3–6 ans','Découpage','3–5 ans'],
-['Arts plastiques','3–6 ans','Collage','3–6 ans'],
-['Arts plastiques','3–6 ans','Lignes / motifs préparatoires à l’écriture','3–6 ans'],
-['Arts plastiques','3–6 ans','Peinture à l’eau','3–6 ans'],
-['Arts plastiques','3–6 ans','Aquarelle','4–6 ans'],
-['Arts plastiques','3–6 ans','Modelage','3–6 ans'],
-['Arts plastiques','3–6 ans','Création libre','3–6 ans'],
-
-/* MUSIQUE */
-['Musique','0–3 ans','Panier de petits instruments','12–36 mois'],
-['Musique','0–3 ans','Grelots','12–36 mois'],
-['Musique','0–3 ans','Maracas / hochets musicaux','12–36 mois'],
-['Musique','0–3 ans','Tambour','18–36 mois'],
-['Musique','0–3 ans','Kalimba adaptée','24–36 mois'],
-['Musique','0–3 ans','Handpan / instrument mélodique accompagné','24–36 mois'],
-['Musique','3–6 ans','Clochettes Montessori','3–6 ans'],
-['Musique','3–6 ans','Association clochettes / notes','4–6 ans'],
-['Musique','3–6 ans','Barres musicales','4–6 ans'],
-['Musique','3–6 ans','Jeux rythmiques','3–6 ans'],
-['Musique','3–6 ans','Reconnaissance des sons','3–6 ans'],
-
-/* SOCIAL EMOTIONAL */
-['Vie sociale & émotionnelle','0–3 ans','Verser / servir un autre','18–36 mois'],
-['Vie sociale & émotionnelle','0–3 ans','Attendre son tour – situation accompagnée','18–36 mois'],
-['Vie sociale & émotionnelle','0–3 ans','Saluer / dire au revoir','12–36 mois'],
-['Vie sociale & émotionnelle','0–3 ans','Demander de l’aide','18–36 mois'],
-['Vie sociale & émotionnelle','3–6 ans','Cadre de vie : saluer','3–6 ans'],
-['Vie sociale & émotionnelle','3–6 ans','Cadre de vie : interrompre poliment','3–6 ans'],
-['Vie sociale & émotionnelle','3–6 ans','Cadre de vie : demander / offrir','3–6 ans'],
-['Vie sociale & émotionnelle','3–6 ans','Cadre de vie : se déplacer dans l’ambiance','3–6 ans'],
-['Vie sociale & émotionnelle','3–6 ans','Jeux de rôle de grâce et courtoisie','3–6 ans'],
-['Vie sociale & émotionnelle','3–6 ans','Résolution de petits conflits accompagnée','3–6 ans'],
-['Vie sociale & émotionnelle','3–6 ans','Reconnaissance des émotions','3–6 ans'],
-
-/* NATURE */
-['Nature et environnement','0–3 ans','Arrosage d’une plante','18–36 mois'],
-['Nature et environnement','0–3 ans','Observation de feuilles / pierres','12–36 mois'],
-['Nature et environnement','0–3 ans','Panier nature saisonnier','12–36 mois'],
-['Nature et environnement','3–6 ans','Jardinage','3–6 ans'],
-['Nature et environnement','3–6 ans','Soin des plantes','3–6 ans'],
-['Nature et environnement','3–6 ans','Observation avec loupe','3–6 ans'],
-['Nature et environnement','3–6 ans','Tri naturel : feuilles / graines / pierres','3–6 ans'],
-['Nature et environnement','3–6 ans','Calendrier saisonnier','3–6 ans'],
-['Nature et environnement','3–6 ans','Météo / observation du temps','4–6 ans'],
-['Nature et environnement','3–6 ans','Élevage / observation du vivant','3–6 ans'],
-
-/* LIVRES */
-['Livres et littérature','0–3 ans','Livres d’images réalistes','0–36 mois'],
-['Livres et littérature','0–3 ans','Livres cartonnés de nomenclature','12–36 mois'],
-['Livres et littérature','0–3 ans','Comptines et albums courts','12–36 mois'],
-['Livres et littérature','3–6 ans','Albums réalistes / documentaires','3–6 ans'],
-['Livres et littérature','3–6 ans','Premiers récits de fiction','3–6 ans'],
-['Livres et littérature','3–6 ans','Livres de lecture autonome','4–6 ans'],
-['Livres et littérature','3–6 ans','Livres classifiés par thèmes','3–6 ans']
+['Nido / environnement préparé','0–3 ans','Matelas au sol / aire de mouvement','0–6 mois'],['Nido / environnement préparé','0–3 ans','Miroir horizontal','0–6 mois'],['Nido / environnement préparé','0–3 ans','Barre de préhension au miroir','2–5 mois'],['Nido / environnement préparé','0–3 ans','Mobile Munari','0–6 semaines'],['Nido / environnement préparé','0–3 ans','Mobile des octaèdres','6–10 semaines'],['Nido / environnement préparé','0–3 ans','Mobile de Gobbi','2–4 mois'],['Nido / environnement préparé','0–3 ans','Mobile des danseurs','3–4 mois'],['Nido / environnement préparé','0–3 ans','Hochet à saisir','3–6 mois'],['Nido / environnement préparé','0–3 ans','Panier à trésors / objets variés','6–12 mois'],['Nido / environnement préparé','0–3 ans','Petite bibliothèque frontale','6–36 mois'],['Nido / environnement préparé','0–3 ans','Porte-manteau / patères à hauteur d’enfant','12–36 mois'],['Nido / environnement préparé','0–3 ans','Table et chaise adaptées','12–36 mois'],['Nido / environnement préparé','0–3 ans','Tour d’observation sécurisée','18–36 mois'],
+['Développement moteur','0–3 ans','Tapis de mouvement','0–12 mois'],['Développement moteur','0–3 ans','Barre de traction basse','8–14 mois'],['Développement moteur','0–3 ans','Chariot de marche stable','9–18 mois'],['Développement moteur','0–3 ans','Escalier / marche d’entraînement','12–24 mois'],['Développement moteur','0–3 ans','Plateau d’équilibre','18–36 mois'],['Développement moteur','0–3 ans','Ligne au sol','18–36 mois'],['Développement moteur','0–3 ans','Porter un plateau','18–36 mois'],['Développement moteur','0–3 ans','Porter une chaise','18–36 mois'],
+['Vie pratique','0–3 ans','Transvasement gros éléments à la main','12–18 mois'],['Vie pratique','0–3 ans','Transvasement cuillère à grosse poignée','18–24 mois'],['Vie pratique','0–3 ans','Transvasement avec petite cruche','18–30 mois'],['Vie pratique','0–3 ans','Verser de l’eau d’une petite cruche','20–36 mois'],['Vie pratique','0–3 ans','Éponger une petite quantité d’eau','18–30 mois'],['Vie pratique','0–3 ans','Laver une table','24–36 mois'],['Vie pratique','0–3 ans','Laver un objet','24–36 mois'],['Vie pratique','0–3 ans','Essuyer une table','18–30 mois'],['Vie pratique','0–3 ans','Balayer','18–36 mois'],['Vie pratique','0–3 ans','Épousseter','18–36 mois'],['Vie pratique','0–3 ans','Nettoyer un miroir','24–36 mois'],['Vie pratique','0–3 ans','Ouvrir / fermer des contenants','12–24 mois'],['Vie pratique','0–3 ans','Enfiler de gros anneaux','12–24 mois'],['Vie pratique','0–3 ans','Enfiler des perles larges','18–30 mois'],['Vie pratique','0–3 ans','Pince à gros objets','18–30 mois'],['Vie pratique','0–3 ans','Pince à petits objets','24–36 mois'],['Vie pratique','0–3 ans','Verser des graines','24–36 mois'],['Vie pratique','0–3 ans','Se laver les mains','18–36 mois'],['Vie pratique','0–3 ans','Se brosser les dents','18–36 mois'],['Vie pratique','0–3 ans','Se servir à boire','18–36 mois'],['Vie pratique','0–3 ans','Manger avec une cuillère','12–24 mois'],['Vie pratique','0–3 ans','Utiliser une fourchette','18–30 mois'],['Vie pratique','0–3 ans','Mettre / enlever son manteau','24–36 mois'],['Vie pratique','0–3 ans','Fermeture éclair','24–36 mois'],
+['Vie pratique','3–6 ans','Cadre d’habillage : gros boutons','2½–4 ans'],['Vie pratique','3–6 ans','Cadre d’habillage : petits boutons','3–5 ans'],['Vie pratique','3–6 ans','Cadre d’habillage : fermeture éclair','2½–4 ans'],['Vie pratique','3–6 ans','Cadre d’habillage : boutons-pression','2½–4 ans'],['Vie pratique','3–6 ans','Cadre d’habillage : crochets','3–5 ans'],['Vie pratique','3–6 ans','Cadre d’habillage : boucles','3½–5 ans'],['Vie pratique','3–6 ans','Cadre d’habillage : nœuds','4–6 ans'],['Vie pratique','3–6 ans','Cadre d’habillage : lacets','4–6 ans'],['Vie pratique','3–6 ans','Verser liquide sans renverser','3–4 ans'],['Vie pratique','3–6 ans','Tartiner','3–5 ans'],['Vie pratique','3–6 ans','Plier un tissu','3–5 ans'],['Vie pratique','3–6 ans','Coudre / point simple','4–6 ans'],['Vie pratique','3–6 ans','Arroser les plantes','3–6 ans'],['Vie pratique','3–6 ans','Planter / jardiner','3–6 ans'],['Vie pratique','3–6 ans','Polir le bois','3–6 ans'],
+['Vie sensorielle','0–3 ans','Boîtes à sons simples','18–36 mois'],['Vie sensorielle','0–3 ans','Flacons à odeurs simples','24–36 mois'],['Vie sensorielle','0–3 ans','Tablettes rugueuses / lisse-rugueux','24–36 mois'],['Vie sensorielle','0–3 ans','Tri de couleurs simples','18–30 mois'],['Vie sensorielle','0–3 ans','Paires de couleurs','24–36 mois'],['Vie sensorielle','0–3 ans','Sac mystère tactile simple','24–36 mois'],['Vie sensorielle','0–3 ans','Solides à encastrer simples','12–24 mois'],['Vie sensorielle','0–3 ans','Tour rose – exploration initiale','24–36 mois'],['Vie sensorielle','0–3 ans','Escalier marron – exploration initiale','24–36 mois'],['Vie sensorielle','3–6 ans','Tour rose','2½–4 ans'],['Vie sensorielle','3–6 ans','Escalier marron','3–4½ ans'],['Vie sensorielle','3–6 ans','Blocs cylindriques 1','3–4 ans'],['Vie sensorielle','3–6 ans','Blocs cylindriques 2','3–4½ ans'],['Vie sensorielle','3–6 ans','Blocs cylindriques 3','3½–5 ans'],['Vie sensorielle','3–6 ans','Blocs cylindriques 4','3½–5 ans'],['Vie sensorielle','3–6 ans','Boîte de couleurs 1','2½–3½ ans'],['Vie sensorielle','3–6 ans','Boîte de couleurs 2','3–4 ans'],['Vie sensorielle','3–6 ans','Boîte de couleurs 3','4–6 ans'],['Vie sensorielle','3–6 ans','Tablettes rugueuses','3–5 ans'],['Vie sensorielle','3–6 ans','Boîtes à sons','3–5 ans'],['Vie sensorielle','3–6 ans','Flacons à odeurs','3–5 ans'],['Vie sensorielle','3–6 ans','Flacons à goûts','4–6 ans'],['Vie sensorielle','3–6 ans','Sac mystère','3–5 ans'],['Vie sensorielle','3–6 ans','Cabinet de géométrie','3–5 ans'],['Vie sensorielle','3–6 ans','Solides géométriques','3½–5 ans'],
+['Langage','0–3 ans','Objets réels nommés','12–24 mois'],['Langage','0–3 ans','Objets miniatures à nommer','18–30 mois'],['Langage','0–3 ans','Imagiers classifiés','18–36 mois'],['Langage','0–3 ans','Cartes de nomenclature simples','24–36 mois'],['Langage','0–3 ans','Jeux d’écoute / sons du quotidien','12–36 mois'],['Langage','0–3 ans','Jeu du « je vois » simple','24–36 mois'],['Langage','0–3 ans','Lettres rugueuses – premières rencontres','30–36 mois'],['Langage','0–3 ans','Alphabets mobiles – découverte','30–36 mois'],['Langage','3–6 ans','Enrichissement du vocabulaire / nomenclatures','3–6 ans'],['Langage','3–6 ans','Lettres rugueuses','3–4 ans'],['Langage','3–6 ans','Jeu des sons','3–4 ans'],['Langage','3–6 ans','Analyse des sons','3–5 ans'],['Langage','3–6 ans','Alphabets mobiles','3½–5 ans'],['Langage','3–6 ans','Lecture de mots phonétiques','4–5 ans'],['Langage','3–6 ans','Lecture de phrases','4½–6 ans'],['Langage','3–6 ans','Nomenclatures classifiées','3–6 ans'],['Langage','3–6 ans','Fonctions des mots – introduction','5–6 ans'],['Langage','3–6 ans','Grammaire : nom / article / adjectif','5–6 ans'],['Langage','3–6 ans','Analyse de phrase','5–6 ans'],['Langage','3–6 ans','Dictées muettes','4½–6 ans'],
+['Mathématiques','0–3 ans','Tri un-à-un / correspondances','18–30 mois'],['Mathématiques','0–3 ans','Quantités 1–3 avec objets','24–36 mois'],['Mathématiques','0–3 ans','Barres numériques – exploration','30–36 mois'],['Mathématiques','0–3 ans','Chiffres rugueux – découverte','30–36 mois'],['Mathématiques','3–6 ans','Barres numériques','3–4 ans'],['Mathématiques','3–6 ans','Chiffres rugueux','3–4 ans'],['Mathématiques','3–6 ans','Association quantité / symbole 0–10','3½–4½ ans'],['Mathématiques','3–6 ans','Jeu des fuseaux','4–5 ans'],['Mathématiques','3–6 ans','Chiffres et jetons','4–5 ans'],['Mathématiques','3–6 ans','Jeu de mémoire de nombres','4½–5½ ans'],['Mathématiques','3–6 ans','Table de Seguin 1','4½–5½ ans'],['Mathématiques','3–6 ans','Table de Seguin 2','5–6 ans'],['Mathématiques','3–6 ans','Chaînes de 10','4½–5½ ans'],['Mathématiques','3–6 ans','Chaînes de 100','5–6 ans'],['Mathématiques','3–6 ans','Chaînes de 1000','5–6 ans'],['Mathématiques','3–6 ans','Perles dorées / système décimal','4½–6 ans'],['Mathématiques','3–6 ans','Jeu de la banque / change','4½–6 ans'],['Mathématiques','3–6 ans','Addition avec perles dorées','4½–6 ans'],['Mathématiques','3–6 ans','Soustraction avec perles dorées','4½–6 ans'],['Mathématiques','3–6 ans','Multiplication avec perles dorées','5–6 ans'],['Mathématiques','3–6 ans','Division avec perles dorées','5–6 ans'],['Mathématiques','3–6 ans','Planche de 100','4½–6 ans'],['Mathématiques','3–6 ans','Fractions – cercles fractionnés','5–6 ans'],
+['Culture','0–3 ans','Nomenclatures animaux','18–36 mois'],['Culture','0–3 ans','Nomenclatures végétaux','18–36 mois'],['Culture','0–3 ans','Nomenclatures objets du quotidien','18–36 mois'],['Culture','0–3 ans','Puzzle simple de géographie','24–36 mois'],['Culture','0–3 ans','Globe terrestre – terre / eau','24–36 mois'],['Culture','3–6 ans','Globe terre / eau','3–4 ans'],['Culture','3–6 ans','Globe continents / couleurs','3½–5 ans'],['Culture','3–6 ans','Planisphère des continents','3½–5 ans'],['Culture','3–6 ans','Cartes de nomenclature des continents','3½–5 ans'],['Culture','3–6 ans','Puzzle de l’Europe','4–6 ans'],['Culture','3–6 ans','Puzzles des continents','3½–6 ans'],['Culture','3–6 ans','Puzzle de la France','4–6 ans'],['Culture','3–6 ans','Nomenclature botanique','3½–6 ans'],['Culture','3–6 ans','Cabinet botanique','4–6 ans'],['Culture','3–6 ans','Nomenclature zoologique','3½–6 ans'],['Culture','3–6 ans','Parties de l’animal','4–6 ans'],['Culture','3–6 ans','Parties de la plante','4–6 ans'],['Culture','3–6 ans','Lignes du temps simples','4–6 ans'],['Culture','3–6 ans','Cycle de vie d’un animal','4–6 ans'],['Culture','3–6 ans','Cycle de vie d’une plante','4–6 ans'],['Culture','3–6 ans','Expériences eau / air / aimants','3–6 ans'],
+['Arts plastiques','0–3 ans','Craies épaisses','18–36 mois'],['Arts plastiques','0–3 ans','Peinture libre','18–36 mois'],['Arts plastiques','0–3 ans','Pâte à modeler','24–36 mois'],['Arts plastiques','0–3 ans','Collage de gros éléments','24–36 mois'],['Arts plastiques','3–6 ans','Poinçonnage','3½–5 ans'],['Arts plastiques','3–6 ans','Découpage','3–5 ans'],['Arts plastiques','3–6 ans','Collage','3–6 ans'],['Arts plastiques','3–6 ans','Lignes / motifs préparatoires à l’écriture','3–6 ans'],['Arts plastiques','3–6 ans','Aquarelle','4–6 ans'],['Arts plastiques','3–6 ans','Modelage','3–6 ans'],['Arts plastiques','3–6 ans','Création libre','3–6 ans'],
+['Musique','0–3 ans','Panier de petits instruments','12–36 mois'],['Musique','0–3 ans','Grelots','12–36 mois'],['Musique','0–3 ans','Maracas / hochets musicaux','12–36 mois'],['Musique','0–3 ans','Tambour','18–36 mois'],['Musique','0–3 ans','Kalimba adaptée','24–36 mois'],['Musique','0–3 ans','Handpan / instrument mélodique accompagné','24–36 mois'],['Musique','3–6 ans','Clochettes Montessori','3–6 ans'],['Musique','3–6 ans','Association clochettes / notes','4–6 ans'],['Musique','3–6 ans','Barres musicales','4–6 ans'],['Musique','3–6 ans','Jeux rythmiques','3–6 ans'],['Musique','3–6 ans','Reconnaissance des sons','3–6 ans'],
+['Vie sociale & émotionnelle','0–3 ans','Saluer / dire au revoir','12–36 mois'],['Vie sociale & émotionnelle','0–3 ans','Demander de l’aide','18–36 mois'],['Vie sociale & émotionnelle','0–3 ans','Attendre son tour – situation accompagnée','18–36 mois'],['Vie sociale & émotionnelle','3–6 ans','Cadre de vie : saluer','3–6 ans'],['Vie sociale & émotionnelle','3–6 ans','Cadre de vie : interrompre poliment','3–6 ans'],['Vie sociale & émotionnelle','3–6 ans','Cadre de vie : demander / offrir','3–6 ans'],['Vie sociale & émotionnelle','3–6 ans','Jeux de rôle de grâce et courtoisie','3–6 ans'],['Vie sociale & émotionnelle','3–6 ans','Résolution de petits conflits accompagnée','3–6 ans'],['Vie sociale & émotionnelle','3–6 ans','Reconnaissance des émotions','3–6 ans'],
+['Nature et environnement','0–3 ans','Arrosage d’une plante','18–36 mois'],['Nature et environnement','0–3 ans','Observation de feuilles / pierres','12–36 mois'],['Nature et environnement','0–3 ans','Panier nature saisonnier','12–36 mois'],['Nature et environnement','3–6 ans','Jardinage','3–6 ans'],['Nature et environnement','3–6 ans','Soin des plantes','3–6 ans'],['Nature et environnement','3–6 ans','Observation avec loupe','3–6 ans'],['Nature et environnement','3–6 ans','Tri naturel : feuilles / graines / pierres','3–6 ans'],['Nature et environnement','3–6 ans','Calendrier saisonnier','3–6 ans'],['Nature et environnement','3–6 ans','Météo / observation du temps','4–6 ans'],
+['Livres et littérature','0–3 ans','Livres d’images réalistes','0–36 mois'],['Livres et littérature','0–3 ans','Livres cartonnés de nomenclature','12–36 mois'],['Livres et littérature','0–3 ans','Comptines et albums courts','12–36 mois'],['Livres et littérature','3–6 ans','Albums réalistes / documentaires','3–6 ans'],['Livres et littérature','3–6 ans','Premiers récits de fiction','3–6 ans'],['Livres et littérature','3–6 ans','Livres de lecture autonome','4–6 ans'],['Livres et littérature','3–6 ans','Livres classifiés par thèmes','3–6 ans']
 ];
 
 function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,8)}
-function load(){
- try{
-  const x=JSON.parse(localStorage.getItem(KEY)||'null');
-  if(x&&x.children&&x.materials)return x;
- }catch(e){}
- return {children:[],materials:MATERIALS.map(x=>({id:uid(),area:x[0],age:x[1],name:x[2],window:x[3],description:'',photo:''})),observations:[],activities:[],notes:[],tracking:{}};
-}
-let db=load();
-if(!db.tracking)db.tracking={};
+function esc(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function freshDB(){return{children:[],materials:MATERIALS.map(x=>({id:uid(),area:x[0],age:x[1],name:x[2],window:x[3],description:'',photo:''})),observations:[],activities:[],notes:[],gallery:[],tracking:{}}}
+function load(){try{const x=JSON.parse(localStorage.getItem(KEY));if(x&&Array.isArray(x.children)&&Array.isArray(x.materials)){x.observations??=[];x.activities??=[];x.notes??=[];x.gallery??=[];x.tracking??={};return x}}catch(e){}return freshDB()}
+let db=load(), currentChild='';
 
 function save(){localStorage.setItem(KEY,JSON.stringify(db));renderAll()}
-function esc(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
-function showView(v){
- document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));
- document.getElementById('view-'+v).classList.add('active');
- document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===v));
- if(v==='home')renderHome();
- if(v==='children')renderChildren();
- if(v==='catalog')renderCatalog();
- if(v==='observations')renderObservations();
- if(v==='activities')renderActivities();
- if(v==='notes')renderNotes();
-}
+function showView(v){document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));document.getElementById('view-'+v).classList.add('active');document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===v));renderAll()}
 document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>showView(b.dataset.view));
 
-function renderHome(){
- document.getElementById('homeChildren').textContent=db.children.length;
- document.getElementById('homeMaterials').textContent=db.materials.length;
- document.getElementById('homeObservations').textContent=db.observations.length;
- let n=0;Object.values(db.tracking).forEach(t=>Object.values(t).forEach(x=>{if(x.status==='Acquis')n++}));
- document.getElementById('homeMastered').textContent=n;
-}
+function renderHome(){homeChildren.textContent=db.children.length;homeMaterials.textContent=db.materials.length;homeObservations.textContent=db.observations.length;let n=0;Object.values(db.tracking).forEach(t=>Object.values(t).forEach(x=>{if(x.status==='Acquis')n++}));homeMastered.textContent=n}
+function childOptions(sel=''){return '<option value="">Choisir…</option>'+db.children.map(c=>`<option value="${esc(c.id)}" ${c.id===sel?'selected':''}>${esc(c.name)}</option>`).join('')}
+function fileData(input){return new Promise(r=>{if(!input?.files?.[0])return r('');const f=input.files[0],fr=new FileReader();fr.onload=()=>r(fr.result);fr.readAsDataURL(f)})}
+function modal(c){modalBox.innerHTML=c;document.getElementById('modal').classList.add('open')}function closeModal(){document.getElementById('modal').classList.remove('open')}
 
-function openChildForm(id){
- const c=db.children.find(x=>x.id===id)||{id:'',name:'',birth:'',group:'0–3 ans',notes:'',photo:''};
- modal(`<h2>${id?'Modifier':'Ajouter'} un enfant</h2>
- <form onsubmit="submitChild(event,'${esc(id)}')">
- <div class="formgrid">
-  <div><label>Prénom / nom</label><input id="fName" required value="${esc(c.name)}"></div>
-  <div><label>Date de naissance</label><input id="fBirth" type="date" value="${esc(c.birth)}"></div>
-  <div><label>Tranche d’âge</label><select id="fGroup"><option ${c.group==='0–3 ans'?'selected':''}>0–3 ans</option><option ${c.group==='3–6 ans'?'selected':''}>3–6 ans</option></select></div>
-  <div class="full"><label>Notes générales</label><textarea id="fNotes">${esc(c.notes)}</textarea></div>
-  <div class="full"><label>Photo (facultatif)</label><input id="fPhoto" type="file" accept="image/*" onchange="previewFile(this,'childPreview')"><div id="childPreview">${c.photo?'<img class="photo" src="'+c.photo+'">':''}</div></div>
- </div>
- <div class="actions"><button type="button" onclick="closeModal()">Annuler</button><button class="primary">Enregistrer</button></div>
- </form>`);
-}
-async function submitChild(e,id){
- e.preventDefault();
- let c=db.children.find(x=>x.id===id);
- const photo=await fileData(document.getElementById('fPhoto'));
- if(!c){c={id:uid(),name:'',birth:'',group:'0–3 ans',notes:'',photo:''};db.children.push(c)}
- c.name=fName.value.trim();c.birth=fBirth.value;c.group=fGroup.value;c.notes=fNotes.value;
- if(photo)c.photo=photo;
- closeModal();save();showView('children');
-}
-function renderChildren(){
- const el=document.getElementById('childrenList');
- if(!db.children.length){el.innerHTML='<div class="card empty">Aucun enfant pour le moment.<br>Commence par créer un profil.</div>';return}
- el.innerHTML=db.children.map(c=>{
-  const t=db.tracking[c.id]||{};
-  const total=db.materials.length, mastered=Object.values(t).filter(x=>x.status==='Acquis').length;
-  return `<div class="card">
-   <div class="profile-top">${c.photo?`<img class="photo" src="${c.photo}">`:''}<div><h3>${esc(c.name)}</h3><div class="muted">${c.birth||''} · ${esc(c.group)}</div></div></div>
-   <p><strong>${mastered}</strong> matériel(s) acquis sur ${total} · <strong>${total?Math.round(mastered/total*100):0}%</strong></p>
-   <div class="progress"><span style="width:${total?mastered/total*100:0}%"></span></div>
-   <div class="actions"><button class="primary" onclick="openProfile('${c.id}')">Ouvrir le profil</button><button onclick="openChildForm('${c.id}')">Modifier</button><button class="danger" onclick="deleteChild('${c.id}')">Supprimer</button></div>
-  </div>`;
- }).join('');
-}
+function openChildForm(id=''){const c=db.children.find(x=>x.id===id)||{id:'',name:'',birth:'',group:'0–3 ans',notes:'',photo:''};modal(`<h2>${id?'Modifier':'Ajouter'} un enfant</h2><form onsubmit="submitChild(event,'${esc(id)}')"><div class="formgrid"><div><label>Prénom / nom</label><input id="fName" required value="${esc(c.name)}"></div><div><label>Date de naissance</label><input id="fBirth" type="date" value="${esc(c.birth)}"></div><div><label>Tranche d’âge</label><select id="fGroup"><option ${c.group==='0–3 ans'?'selected':''}>0–3 ans</option><option ${c.group==='3–6 ans'?'selected':''}>3–6 ans</option></select></div><div class="full"><label>Notes générales</label><textarea id="fNotes">${esc(c.notes)}</textarea></div><div class="full"><label>Photo</label><input id="fPhoto" type="file" accept="image/*"><div>${c.photo?`<img class="photo" src="${c.photo}">`:''}</div></div></div><div class="actions"><button type="button" onclick="closeModal()">Annuler</button><button class="primary">Enregistrer</button></div></form>`)}
+async function submitChild(e,id){e.preventDefault();let c=db.children.find(x=>x.id===id);if(!c){c={id:uid(),name:'',birth:'',group:'0–3 ans',notes:'',photo:''};db.children.push(c)}c.name=fName.value.trim();c.birth=fBirth.value;c.group=fGroup.value;c.notes=fNotes.value.trim();const p=await fileData(fPhoto);if(p)c.photo=p;closeModal();save();showView('children')}
+function renderChildren(){childrenList.innerHTML=db.children.length?db.children.map(c=>{const t=db.tracking[c.id]||{},total=db.materials.length,mastered=Object.values(t).filter(x=>x.status==='Acquis').length;return `<div class="card"><div class="profile-top">${c.photo?`<img class="photo" src="${c.photo}">`:''}<div><h3>${esc(c.name)}</h3><div class="muted">${esc(c.birth)} · ${esc(c.group)}</div></div></div><p><strong>${mastered}</strong> acquis sur ${total} · ${total?Math.round(mastered/total*100):0}%</p><div class="progress"><span style="width:${total?mastered/total*100:0}%"></span></div><div class="actions"><button class="primary" onclick="openProfile('${c.id}')">Ouvrir le profil</button><button onclick="openChildForm('${c.id}')">Modifier</button><button class="danger" onclick="deleteChild('${c.id}')">Supprimer</button></div></div>`}).join(''):'<div class="card empty">Aucun enfant. Commence par créer un profil.</div>'}
 function deleteChild(id){if(confirm('Supprimer ce profil et ses suivis ?')){db.children=db.children.filter(x=>x.id!==id);delete db.tracking[id];save()}}
-function openProfile(id){window.currentChild=id;showView('profile');renderProfile(id)}
+function openProfile(id){currentChild=id;showView('profile')}
 
-function getTrack(cid,mid){
- if(!db.tracking[cid])db.tracking[cid]={};
- if(!db.tracking[cid][mid])db.tracking[cid][mid]={status:'À présenter',progress:0,concentration:'',observation:'',date:''};
- return db.tracking[cid][mid];
-}
+function getTrack(cid,mid){db.tracking[cid]??={};db.tracking[cid][mid]??={status:'À présenter',progress:0,concentration:'',observation:'',date:''};return db.tracking[cid][mid]}
 function statusClass(s){return s==='Acquis'?'status-mastered':s==='En cours d’acquisition'?'status-working':s==='Présenté'?'status-presented':s==='À consolider'?'status-consolidate':'status-not'}
 function statusProgress(s){return {'À présenter':0,'Présenté':25,'En cours d’acquisition':60,'À consolider':75,'Acquis':100}[s]??0}
-function updateTrack(cid,mid,field,val){
- const t=getTrack(cid,mid);t[field]=field==='progress'?Number(val):val;
- if(field==='status' && (t.progress===0 || t.progress===100))t.progress=statusProgress(val);
- save();
-}
-function renderProfile(id){
- const c=db.children.find(x=>x.id===id);if(!c)return;
- const tr=db.tracking[id]||{};
- const byArea={};db.materials.forEach(m=>{(byArea[m.area]??=[]).push(m)});
- let mastered=0,started=0;
- Object.values(tr).forEach(x=>{if(x.status==='Acquis')mastered++;if(x.status&&x.status!=='À présenter')started++});
- let html=`<div class="profile-top">${c.photo?`<img class="photo" src="${c.photo}">`:''}<div><h2>${esc(c.name)}</h2><div class="muted">${c.birth||''} · ${esc(c.group)}</div></div></div>
- <div class="grid" style="margin:15px 0"><div class="card"><div class="stat">${mastered}</div>acquis</div><div class="card"><div class="stat">${started}</div>présentés / en travail</div><div class="card"><div class="stat">${db.materials.length}</div>matériels au catalogue</div></div>
- ${c.notes?`<div class="note"><strong>Notes générales</strong><br>${esc(c.notes).replace(/\n/g,'<br>')}</div>`:''}
- <div class="toolbar" style="margin-top:20px"><input id="profileSearch" placeholder="Rechercher dans le matériel…" oninput="filterProfile('${id}')" style="max-width:360px"><select id="profileArea" onchange="renderProfile('${id}')"><option value="">Toutes les aires</option>${areas.map(a=>`<option>${esc(a)}</option>`).join('')}</select></div>
- <div id="profileMaterials">`;
- const selectedArea=document.getElementById('profileArea')?.value||'';
- for(const area of areas){
-  if(selectedArea&&selectedArea!==area)continue;
-  const mats=(byArea[area]||[]).slice().sort((a,b)=>a.age.localeCompare(b.age,'fr')||a.name.localeCompare(b.name,'fr'));
-  if(!mats.length)continue;
-  html+=`<div class="area-block" data-area="${esc(area)}"><div class="area-title"><h3>${esc(area)}</h3><span class="badge">${mats.length} matériel(s)</span></div>`;
-  let lastAge='';
-  mats.forEach(m=>{
-   if(m.age!==lastAge){html+=`<div class="age-group">${esc(m.age)}</div>`;lastAge=m.age}
-   const t=getTrack(id,m.id);
-   html+=`<div class="material-row" data-material="${esc(m.name.toLowerCase())}">
-    <div class="material-head"><div><div class="material-name">${esc(m.name)}</div><div class="meta">${esc(m.age)}${m.window?' · présentation indicative : '+esc(m.window):''}</div></div>
-    <span class="badge ${statusClass(t.status)}">${esc(t.status)}</span></div>
-    <div class="formgrid" style="margin-top:10px">
-      <div><label>État</label><select onchange="updateTrack('${id}','${m.id}','status',this.value)">
-       ${['À présenter','Présenté','En cours d’acquisition','À consolider','Acquis'].map(s=>`<option ${s===t.status?'selected':''}>${s}</option>`).join('')}
-      </select></div>
-      <div><label>Progression <span id="pct-${id}-${m.id}">${Number(t.progress)||0}%</span></label>
-       <input type="range" min="0" max="100" step="5" value="${Number(t.progress)||0}" oninput="document.getElementById('pct-${id}-${m.id}').textContent=this.value+'%';updateTrack('${id}','${m.id}','progress',this.value)">
-      </div>
-      <div><label>Concentration observée</label><select onchange="updateTrack('${id}','${m.id}','concentration',this.value)">
-       <option value="">Non renseignée</option>${['1 — très brève','2 — brève','3 — correcte','4 — soutenue','5 — très soutenue'].map(s=>`<option ${s===t.concentration?'selected':''}>${s}</option>`).join('')}
-      </select></div>
-      <div><label>Date de dernière observation</label><input type="date" value="${esc(t.date)}" onchange="updateTrack('${id}','${m.id}','date',this.value)"></div>
-      <div class="full"><label>Observation sur ce matériel</label><textarea placeholder="Gestes, intérêt, répétition, erreurs, stratégie, autonomie, langage, concentration…" onblur="updateTrack('${id}','${m.id}','observation',this.value)">${esc(t.observation)}</textarea></div>
-    </div>
-    <div class="progress" style="margin-top:9px"><span style="width:${Number(t.progress)||0}%"></span></div>
-   </div>`;
-  });
-  html+='</div>';
- }
- html+='</div>';
- document.getElementById('profileDetail').innerHTML=html;
-}
-function filterProfile(id){
- const q=(document.getElementById('profileSearch')?.value||'').toLowerCase();
- document.querySelectorAll('#profileMaterials .material-row').forEach(r=>r.style.display=r.dataset.material.includes(q)?'block':'none');
-}
+function updateTrack(cid,mid,field,val){const t=getTrack(cid,mid);t[field]=field==='progress'?Number(val):val;if(field==='status')t.progress=statusProgress(val);save()}
+function renderProfile(){const c=db.children.find(x=>x.id===currentChild);if(!c)return;const tr=db.tracking[currentChild]||{},q=document.getElementById('profileSearch')?.value?.toLowerCase()||'',sel=document.getElementById('profileArea')?.value||'';let mastered=0,started=0;Object.values(tr).forEach(x=>{if(x.status==='Acquis')mastered++;if(x.status&&x.status!=='À présenter')started++});let by={};db.materials.forEach(m=>(by[m.area]??=[]).push(m));let h=`<div class="profile-top">${c.photo?`<img class="photo" src="${c.photo}">`:''}<div><h2>${esc(c.name)}</h2><div class="muted">${esc(c.birth)} · ${esc(c.group)}</div></div></div><div class="grid"><div class="card"><div class="stat">${mastered}</div>acquis</div><div class="card"><div class="stat">${started}</div>présentés / en travail</div><div class="card"><div class="stat">${db.materials.length}</div>au catalogue</div></div>${c.notes?`<div class="note"><strong>Notes générales</strong><br>${esc(c.notes).replace(/\n/g,'<br>')}</div>`:''}<div class="toolbar" style="margin-top:20px"><input id="profileSearch" placeholder="Rechercher un matériel…" value="${esc(q)}" oninput="renderProfile()"><select id="profileArea" onchange="renderProfile()"><option value="">Toutes les aires</option>${areas.map(a=>`<option ${a===sel?'selected':''}>${esc(a)}</option>`).join('')}</select></div>`;
+for(const area of areas){if(sel&&sel!==area)continue;const mats=(by[area]||[]).filter(m=>!q||m.name.toLowerCase().includes(q));if(!mats.length)continue;h+=`<div class="area-block"><div class="area-title"><h3>${esc(area)}</h3><span class="badge">${mats.length}</span></div>`;let age='';for(const m of mats.sort((a,b)=>a.age.localeCompare(b.age,'fr')||a.name.localeCompare(b.name,'fr'))){if(m.age!==age){h+=`<div class="age-group">${esc(m.age)}</div>`;age=m.age}const t=getTrack(currentChild,m.id);h+=`<div class="material-row"><div class="material-head"><div>${m.photo?`<img class="photo" src="${m.photo}" style="width:58px;height:58px;float:left;margin-right:10px">`:''}<div class="material-name">${esc(m.name)}</div><div class="meta">${esc(m.window)}</div>${m.description?`<div class="muted">${esc(m.description)}</div>`:''}</div><span class="badge ${statusClass(t.status)}">${esc(t.status)}</span></div><div class="formgrid" style="margin-top:10px"><div><label>État</label><select onchange="updateTrack('${currentChild}','${m.id}','status',this.value)">${['À présenter','Présenté','En cours d’acquisition','À consolider','Acquis'].map(s=>`<option ${s===t.status?'selected':''}>${s}</option>`).join('')}</select></div><div><label>Progression <span>${t.progress}%</span></label><input type="range" min="0" max="100" step="5" value="${t.progress}" oninput="updateTrack('${currentChild}','${m.id}','progress',this.value)"></div><div><label>Concentration</label><select onchange="updateTrack('${currentChild}','${m.id}','concentration',this.value)"><option value="">Non renseignée</option>${['1 — très brève','2 — brève','3 — correcte','4 — soutenue','5 — très soutenue'].map(s=>`<option ${s===t.concentration?'selected':''}>${s}</option>`).join('')}</select></div><div><label>Date</label><input type="date" value="${esc(t.date)}" onchange="updateTrack('${currentChild}','${m.id}','date',this.value)"></div><div class="full"><label>Observation</label><textarea onblur="updateTrack('${currentChild}','${m.id}','observation',this.value)">${esc(t.observation)}</textarea></div></div><div class="progress"><span style="width:${t.progress}%"></span></div></div>`}h+='</div>'}profileDetail.innerHTML=h}
+function renderCatalog(){const cur=catArea.value;catArea.innerHTML='<option value="">Toutes les aires</option>'+areas.map(a=>`<option ${a===cur?'selected':''}>${esc(a)}</option>`).join('');const q=catSearch.value.toLowerCase(),age=catAge.value,area=catArea.value;const list=db.materials.filter(m=>(!q||(`${m.name} ${m.description} ${m.area}`).toLowerCase().includes(q))&&(!age||m.age===age)&&(!area||m.area===area));catalogList.innerHTML=list.length?list.map(m=>`<div class="material-row"><div class="material-head"><div>${m.photo?`<img class="photo" src="${m.photo}" style="float:left;margin-right:10px">`:''}<div class="material-name">${esc(m.name)}</div><div class="meta">${esc(m.area)} · ${esc(m.age)} · ${esc(m.window)}</div>${m.description?`<div class="muted">${esc(m.description)}</div>`:''}</div><div class="actions"><button class="small" onclick="openMaterialForm('${m.id}')">Modifier</button><button class="small danger" onclick="deleteMaterial('${m.id}')">Supprimer</button></div></div></div>`).join(''):'<div class="empty">Aucun matériel trouvé.</div>'}
+function openMaterialForm(id=''){const m=db.materials.find(x=>x.id===id)||{id:'',name:'',area:areas[0],age:'0–3 ans',window:'',description:'',photo:''};modal(`<h2>${id?'Modifier':'Ajouter'} un matériel</h2><form onsubmit="submitMaterial(event,'${id}')"><div class="formgrid"><div class="full"><label>Nom</label><input id="mName" required value="${esc(m.name)}"></div><div><label>Aire</label><select id="mArea">${areas.map(a=>`<option ${a===m.area?'selected':''}>${esc(a)}</option>`).join('')}</select></div><div><label>Tranche</label><select id="mAge"><option ${m.age==='0–3 ans'?'selected':''}>0–3 ans</option><option ${m.age==='3–6 ans'?'selected':''}>3–6 ans</option></select></div><div><label>Fenêtre indicative</label><input id="mWindow" value="${esc(m.window)}"></div><div class="full"><label>Description</label><textarea id="mDesc">${esc(m.description)}</textarea></div><div class="full"><label>Photo du matériel</label><input id="mPhoto" type="file" accept="image/*">${m.photo?`<img class="photo" src="${m.photo}">`:''}</div></div><div class="actions"><button type="button" onclick="closeModal()">Annuler</button><button class="primary">Enregistrer</button></div></form>`)}
+async function submitMaterial(e,id){e.preventDefault();let m=db.materials.find(x=>x.id===id);if(!m){m={id:uid(),name:'',area:'',age:'',window:'',description:'',photo:''};db.materials.push(m)}m.name=mName.value.trim();m.area=mArea.value;m.age=mAge.value;m.window=mWindow.value.trim();m.description=mDesc.value.trim();const p=await fileData(mPhoto);if(p)m.photo=p;closeModal();save();showView('catalog')}
+function deleteMaterial(id){const m=db.materials.find(x=>x.id===id);if(confirm(`Supprimer « ${m?.name||''} » ?`)){db.materials=db.materials.filter(x=>x.id!==id);save()}}
 
-function renderCatalog(){
- const areaSel=document.getElementById('catArea');const current=areaSel.value;
- areaSel.innerHTML='<option value="">Toutes les aires</option>'+areas.map(a=>`<option ${a===current?'selected':''}>${esc(a)}</option>`).join('');
- const q=(document.getElementById('catSearch').value||'').toLowerCase(),age=document.getElementById('catAge').value,area=areaSel.value;
- const groups={};
- db.materials.filter(m=>(!q||(`${m.name} ${m.description} ${m.area}`).toLowerCase().includes(q))&&(!age||m.age===age)&&(!area||m.area===area))
- .forEach(m=>(groups[m.area]??=[]).push(m));
- let out='';
- Object.keys(groups).sort((a,b)=>areas.indexOf(a)-areas.indexOf(b)).forEach(a=>{
-  out+=`<div class="area-block"><div class="area-title"><h3>${esc(a)}</h3><span class="badge">${groups[a].length}</span></div>`;
-  ['0–3 ans','3–6 ans'].forEach(age2=>{
-   const list=groups[a].filter(m=>m.age===age2).sort((x,y)=>x.name.localeCompare(y.name,'fr'));
-   if(!list.length)return;
-   out+=`<div class="age-group">${age2}</div>`;
-   list.forEach(m=>out+=`<div class="material-row"><div class="material-head"><div><div class="material-name">${esc(m.name)}</div><div class="meta">${esc(m.window||'')}</div>${m.description?`<div class="muted">${esc(m.description)}</div>`:''}</div>
-    <div class="actions"><button class="small" onclick="openMaterialForm('${m.id}')">Modifier</button><button class="small danger" onclick="deleteMaterial('${m.id}')">Supprimer</button></div></div></div>`);
-  });
-  out+='</div>';
- });
- document.getElementById('catalogList').innerHTML=out||'<div class="empty">Aucun matériel trouvé.</div>';
-}
-function openMaterialForm(id){
- const m=db.materials.find(x=>x.id===id)||{id:'',name:'',area:areas[0],age:'0–3 ans',window:'',description:''};
- modal(`<h2>${id?'Modifier':'Ajouter'} un matériel</h2><form onsubmit="submitMaterial(event,'${esc(id)}')">
- <div class="formgrid">
-  <div class="full"><label>Nom du matériel / présentation</label><input id="mName" required value="${esc(m.name)}"></div>
-  <div><label>Aire</label><select id="mArea">${areas.map(a=>`<option ${a===m.area?'selected':''}>${esc(a)}</option>`).join('')}</select></div>
-  <div><label>Tranche</label><select id="mAge"><option ${m.age==='0–3 ans'?'selected':''}>0–3 ans</option><option ${m.age==='3–6 ans'?'selected':''}>3–6 ans</option></select></div>
-  <div><label>Âge / fenêtre indicative</label><input id="mWindow" value="${esc(m.window)}"></div>
-  <div class="full"><label>Description / précisions</label><textarea id="mDesc">${esc(m.description)}</textarea></div>
- </div><div class="actions"><button type="button" onclick="closeModal()">Annuler</button><button class="primary">Enregistrer</button></div></form>`);
-}
-function submitMaterial(e,id){
- e.preventDefault();let m=db.materials.find(x=>x.id===id);
- if(!m){m={id:uid(),name:'',area:'',age:'',window:'',description:'',photo:''};db.materials.push(m)}
- m.name=mName.value.trim();m.area=mArea.value;m.age=mAge.value;m.window=mWindow.value.trim();m.description=mDesc.value.trim();
- closeModal();save();showView('catalog');
-}
-function deleteMaterial(id){
- const m=db.materials.find(x=>x.id===id);
- if(confirm(`Supprimer « ${m?.name||''} » du catalogue ? Les suivis existants restent conservés.`)){db.materials=db.materials.filter(x=>x.id!==id);save()}
-}
-
-function childOptions(selected=''){return '<option value="">Choisir…</option>'+db.children.map(c=>`<option value="${c.id}" ${c.id===selected?'selected':''}>${esc(c.name)}</option>`).join('')}
-function openObservationForm(id){
- const o=db.observations.find(x=>x.id===id)||{id:'',child:'',date:new Date().toISOString().slice(0,10),area:areas[0],text:'',material:''};
- modal(`<h2>${id?'Modifier':'Nouvelle'} observation</h2><form onsubmit="submitObservation(event,'${esc(id)}')"><div class="formgrid">
- <div><label>Enfant</label><select id="oChild" required>${childOptions(o.child)}</select></div><div><label>Date</label><input id="oDate" type="date" value="${esc(o.date)}"></div>
- <div><label>Aire</label><select id="oArea">${areas.map(a=>`<option ${a===o.area?'selected':''}>${esc(a)}</option>`).join('')}</select></div>
- <div><label>Matériel (facultatif)</label><select id="oMaterial"><option value="">— Aucun —</option>${db.materials.map(m=>`<option value="${m.id}" ${m.id===o.material?'selected':''}>${esc(m.name)}</option>`).join('')}</select></div>
- <div class="full"><label>Observation</label><textarea id="oText" required>${esc(o.text)}</textarea></div></div>
- <div class="actions"><button type="button" onclick="closeModal()">Annuler</button><button class="primary">Enregistrer</button></div></form>`);
-}
+function openObservationForm(id=''){const o=db.observations.find(x=>x.id===id)||{id:'',child:'',date:new Date().toISOString().slice(0,10),area:areas[0],material:'',text:''};modal(`<h2>${id?'Modifier':'Nouvelle'} observation</h2><form onsubmit="submitObservation(event,'${id}')"><div class="formgrid"><div><label>Enfant</label><select id="oChild" required>${childOptions(o.child)}</select></div><div><label>Date</label><input id="oDate" type="date" value="${esc(o.date)}"></div><div><label>Aire</label><select id="oArea">${areas.map(a=>`<option ${a===o.area?'selected':''}>${esc(a)}</option>`).join('')}</select></div><div><label>Matériel</label><select id="oMaterial"><option value="">—</option>${db.materials.map(m=>`<option value="${m.id}" ${m.id===o.material?'selected':''}>${esc(m.name)}</option>`).join('')}</select></div><div class="full"><label>Observation</label><textarea id="oText" required>${esc(o.text)}</textarea></div></div><div class="actions"><button type="button" onclick="closeModal()">Annuler</button><button class="primary">Enregistrer</button></div></form>`)}
 function submitObservation(e,id){e.preventDefault();let o=db.observations.find(x=>x.id===id);if(!o){o={id:uid()};db.observations.push(o)}o.child=oChild.value;o.date=oDate.value;o.area=oArea.value;o.material=oMaterial.value;o.text=oText.value.trim();closeModal();save();showView('observations')}
-function renderObservations(){
- const el=document.getElementById('observationsList');
- const list=[...db.observations].sort((a,b)=>b.date.localeCompare(a.date));
- el.innerHTML=list.length?list.map(o=>{const c=db.children.find(x=>x.id===o.child),m=db.materials.find(x=>x.id===o.material);return `<div class="card"><div class="toolbar"><strong>${esc(c?.name||'Enfant supprimé')}</strong><span class="muted">${esc(o.date||'')}</span><span class="badge">${esc(o.area)}</span>${m?`<span class="badge">${esc(m.name)}</span>`:''}<span style="margin-left:auto"><button class="small" onclick="openObservationForm('${o.id}')">Modifier</button><button class="small danger" onclick="deleteObservation('${o.id}')">Supprimer</button></span></div><p>${esc(o.text).replace(/\n/g,'<br>')}</p></div>`}).join(''):'<div class="card empty">Aucune observation.</div>';
-}
+function renderObservations(){const list=[...db.observations].sort((a,b)=>b.date.localeCompare(a.date));observationsList.innerHTML=list.length?list.map(o=>{const c=db.children.find(x=>x.id===o.child),m=db.materials.find(x=>x.id===o.material);return `<div class="card"><div class="toolbar"><strong>${esc(c?.name||'Enfant supprimé')}</strong><span class="muted">${esc(o.date)}</span><span class="badge">${esc(o.area)}</span>${m?`<span class="badge">${esc(m.name)}</span>`:''}<span style="margin-left:auto"><button class="small" onclick="openObservationForm('${o.id}')">Modifier</button><button class="small danger" onclick="deleteObservation('${o.id}')">Supprimer</button></span></div><p>${esc(o.text).replace(/\n/g,'<br>')}</p></div>`}).join(''):'<div class="card empty">Aucune observation.</div>'}
 function deleteObservation(id){if(confirm('Supprimer cette observation ?')){db.observations=db.observations.filter(x=>x.id!==id);save()}}
 
-function openActivityForm(id){
- const a=db.activities.find(x=>x.id===id)||{id:'',child:'',date:new Date().toISOString().slice(0,10),area:areas[0],title:'',material:'',note:''};
- modal(`<h2>${id?'Modifier':'Nouvelle'} activité</h2><form onsubmit="submitActivity(event,'${esc(id)}')"><div class="formgrid">
- <div><label>Enfant</label><select id="aChild" required>${childOptions(a.child)}</select></div><div><label>Date</label><input id="aDate" type="date" value="${esc(a.date)}"></div>
- <div><label>Aire</label><select id="aArea">${areas.map(x=>`<option ${x===a.area?'selected':''}>${esc(x)}</option>`).join('')}</select></div>
- <div><label>Matériel</label><select id="aMaterial"><option value="">—</option>${db.materials.map(m=>`<option value="${m.id}" ${m.id===a.material?'selected':''}>${esc(m.name)}</option>`).join('')}</select></div>
- <div class="full"><label>Titre</label><input id="aTitle" value="${esc(a.title)}" required></div><div class="full"><label>Notes</label><textarea id="aNote">${esc(a.note)}</textarea></div></div>
- <div class="actions"><button type="button" onclick="closeModal()">Annuler</button><button class="primary">Enregistrer</button></div></form>`);
-}
-function submitActivity(e,id){e.preventDefault();let a=db.activities.find(x=>x.id===id);if(!a){a={id:uid()};db.activities.push(a)}a.child=aChild.value;a.date=aDate.value;a.area=aArea.value;a.title=aTitle.value.trim();a.material=aMaterial.value;a.note=aNote.value.trim();closeModal();save();showView('activities')}
-function renderActivities(){const el=document.getElementById('activitiesList');const list=[...db.activities].sort((a,b)=>b.date.localeCompare(a.date));el.innerHTML=list.length?list.map(a=>{const c=db.children.find(x=>x.id===a.child),m=db.materials.find(x=>x.id===a.material);return `<div class="card"><div class="toolbar"><strong>${esc(a.title)}</strong><span class="badge">${esc(c?.name||'')}</span><span class="badge">${esc(a.area)}</span><span class="muted">${esc(a.date)}</span><span style="margin-left:auto"><button class="small" onclick="openActivityForm('${a.id}')">Modifier</button><button class="small danger" onclick="deleteActivity('${a.id}')">Supprimer</button></span></div>${m?`<div class="meta">${esc(m.name)}</div>`:''}<p>${esc(a.note).replace(/\n/g,'<br>')}</p></div>`}).join(''):'<div class="card empty">Aucune activité.</div>'}
+function openActivityForm(id=''){const a=db.activities.find(x=>x.id===id)||{id:'',child:'',date:new Date().toISOString().slice(0,10),area:areas[0],material:'',title:'',note:''};modal(`<h2>${id?'Modifier':'Nouvelle'} activité</h2><form onsubmit="submitActivity(event,'${id}')"><div class="formgrid"><div><label>Enfant</label><select id="aChild" required>${childOptions(a.child)}</select></div><div><label>Date</label><input id="aDate" type="date" value="${esc(a.date)}"></div><div><label>Aire</label><select id="aArea">${areas.map(x=>`<option ${x===a.area?'selected':''}>${esc(x)}</option>`).join('')}</select></div><div><label>Matériel</label><select id="aMaterial"><option value="">—</option>${db.materials.map(m=>`<option value="${m.id}" ${m.id===a.material?'selected':''}>${esc(m.name)}</option>`).join('')}</select></div><div class="full"><label>Titre</label><input id="aTitle" required value="${esc(a.title)}"></div><div class="full"><label>Notes</label><textarea id="aNote">${esc(a.note)}</textarea></div></div><div class="actions"><button type="button" onclick="closeModal()">Annuler</button><button class="primary">Enregistrer</button></div></form>`)}
+function submitActivity(e,id){e.preventDefault();let a=db.activities.find(x=>x.id===id);if(!a){a={id:uid()};db.activities.push(a)}a.child=aChild.value;a.date=aDate.value;a.area=aArea.value;a.material=aMaterial.value;a.title=aTitle.value.trim();a.note=aNote.value.trim();closeModal();save();showView('activities')}
+function renderActivities(){const list=[...db.activities].sort((a,b)=>b.date.localeCompare(a.date));activitiesList.innerHTML=list.length?list.map(a=>{const c=db.children.find(x=>x.id===a.child),m=db.materials.find(x=>x.id===a.material);return `<div class="card"><div class="toolbar"><strong>${esc(a.title)}</strong><span class="badge">${esc(c?.name||'')}</span><span class="badge">${esc(a.area)}</span><span class="muted">${esc(a.date)}</span><span style="margin-left:auto"><button class="small" onclick="openActivityForm('${a.id}')">Modifier</button><button class="small danger" onclick="deleteActivity('${a.id}')">Supprimer</button></span></div>${m?`<div class="meta">${esc(m.name)}</div>`:''}<p>${esc(a.note).replace(/\n/g,'<br>')}</p></div>`}).join(''):'<div class="card empty">Aucune activité.</div>'}
 function deleteActivity(id){if(confirm('Supprimer cette activité ?')){db.activities=db.activities.filter(x=>x.id!==id);save()}}
 
-function openNoteForm(id){
- const n=db.notes.find(x=>x.id===id)||{id:'',child:'',date:new Date().toISOString().slice(0,10),title:'',text:''};
- modal(`<h2>${id?'Modifier':'Nouvelle'} note</h2><form onsubmit="submitNote(event,'${esc(id)}')"><div class="formgrid"><div><label>Enfant (facultatif)</label><select id="nChild">${childOptions(n.child)}</select></div><div><label>Date</label><input id="nDate" type="date" value="${esc(n.date)}"></div><div class="full"><label>Titre</label><input id="nTitle" value="${esc(n.title)}"></div><div class="full"><label>Note</label><textarea id="nText" required>${esc(n.text)}</textarea></div></div><div class="actions"><button type="button" onclick="closeModal()">Annuler</button><button class="primary">Enregistrer</button></div></form>`);
-}
+function openNoteForm(id=''){const n=db.notes.find(x=>x.id===id)||{id:'',child:'',date:new Date().toISOString().slice(0,10),title:'',text:''};modal(`<h2>${id?'Modifier':'Nouvelle'} note</h2><form onsubmit="submitNote(event,'${id}')"><div class="formgrid"><div><label>Enfant</label><select id="nChild">${childOptions(n.child)}</select></div><div><label>Date</label><input id="nDate" type="date" value="${esc(n.date)}"></div><div class="full"><label>Titre</label><input id="nTitle" value="${esc(n.title)}"></div><div class="full"><label>Note</label><textarea id="nText" required>${esc(n.text)}</textarea></div></div><div class="actions"><button type="button" onclick="closeModal()">Annuler</button><button class="primary">Enregistrer</button></div></form>`)}
 function submitNote(e,id){e.preventDefault();let n=db.notes.find(x=>x.id===id);if(!n){n={id:uid()};db.notes.push(n)}n.child=nChild.value;n.date=nDate.value;n.title=nTitle.value.trim();n.text=nText.value.trim();closeModal();save();showView('notes')}
-function renderNotes(){const el=document.getElementById('notesList');const list=[...db.notes].sort((a,b)=>b.date.localeCompare(a.date));el.innerHTML=list.length?list.map(n=>{const c=db.children.find(x=>x.id===n.child);return `<div class="card"><div class="toolbar"><strong>${esc(n.title||'Note')}</strong>${c?`<span class="badge">${esc(c.name)}</span>`:''}<span class="muted">${esc(n.date)}</span><span style="margin-left:auto"><button class="small" onclick="openNoteForm('${n.id}')">Modifier</button><button class="small danger" onclick="deleteNote('${n.id}')">Supprimer</button></span></div><p>${esc(n.text).replace(/\n/g,'<br>')}</p></div>`}).join(''):'<div class="card empty">Aucune note.</div>'}
+function renderNotes(){const list=[...db.notes].sort((a,b)=>b.date.localeCompare(a.date));notesList.innerHTML=list.length?list.map(n=>{const c=db.children.find(x=>x.id===n.child);return `<div class="card"><div class="toolbar"><strong>${esc(n.title||'Note')}</strong>${c?`<span class="badge">${esc(c.name)}</span>`:''}<span class="muted">${esc(n.date)}</span><span style="margin-left:auto"><button class="small" onclick="openNoteForm('${n.id}')">Modifier</button><button class="small danger" onclick="deleteNote('${n.id}')">Supprimer</button></span></div><p>${esc(n.text).replace(/\n/g,'<br>')}</p></div>`}).join(''):'<div class="card empty">Aucune note.</div>'}
 function deleteNote(id){if(confirm('Supprimer cette note ?')){db.notes=db.notes.filter(x=>x.id!==id);save()}}
 
-function reportHTML(c){
- const tr=db.tracking[c.id]||{};
- const by={};db.materials.forEach(m=>(by[m.area]??=[]).push(m));
- let mastered=0,started=0;Object.values(tr).forEach(x=>{if(x.status==='Acquis')mastered++;if(x.status&&x.status!=='À présenter')started++});
- let s=`<div class="report"><div class="profile-top">${c.photo?`<img class="photo" src="${c.photo}">`:''}<div><h1>Compte rendu Montessori</h1><h2>${esc(c.name)}</h2><div>${esc(c.birth||'')} · ${esc(c.group)}</div></div></div>
- <div class="report-section"><h3>Synthèse</h3><p><strong>${mastered}</strong> matériel(s) acquis · <strong>${started}</strong> présenté(s) ou en travail · ${db.materials.length} au catalogue.</p><div class="progress"><span style="width:${db.materials.length?mastered/db.materials.length*100:0}%"></span></div></div>`;
- for(const area of areas){
-  const mats=(by[area]||[]).filter(m=>tr[m.id]&&tr[m.id].status&&tr[m.id].status!=='À présenter');
-  if(!mats.length)continue;
-  s+=`<div class="report-section"><h3>${esc(area)}</h3>`;
-  mats.forEach(m=>{const t=tr[m.id];s+=`<div class="report-item"><strong>${esc(m.name)}</strong> <span class="badge ${statusClass(t.status)}">${esc(t.status)}</span><div class="meta">${esc(m.age)} · Progression : ${Number(t.progress)||0}%${t.concentration?' · Concentration : '+esc(t.concentration):''}${t.date?' · Dernière observation : '+esc(t.date):''}</div><div class="progress"><span style="width:${Number(t.progress)||0}%"></span></div>${t.observation?`<p>${esc(t.observation).replace(/\n/g,'<br>')}</p>`:''}</div>`});
-  s+='</div>';
- }
- const obs=db.observations.filter(o=>o.child===c.id).sort((a,b)=>b.date.localeCompare(a.date));
- if(obs.length){s+='<div class="report-section"><h3>Observations générales</h3>'+obs.map(o=>`<div class="report-item"><strong>${esc(o.date)}</strong> · ${esc(o.area)}<p>${esc(o.text).replace(/\n/g,'<br>')}</p></div>`).join('')+'</div>'}
- const acts=db.activities.filter(a=>a.child===c.id).sort((a,b)=>b.date.localeCompare(a.date));
- if(acts.length){s+='<div class="report-section"><h3>Activités</h3>'+acts.map(a=>`<div class="report-item"><strong>${esc(a.date)} — ${esc(a.title)}</strong><p>${esc(a.note).replace(/\n/g,'<br>')}</p></div>`).join('')+'</div>'}
- const notes=db.notes.filter(n=>n.child===c.id).sort((a,b)=>b.date.localeCompare(a.date));
- if(notes.length){s+='<div class="report-section"><h3>Notes</h3>'+notes.map(n=>`<div class="report-item"><strong>${esc(n.date)} — ${esc(n.title)}</strong><p>${esc(n.text).replace(/\n/g,'<br>')}</p></div>`).join('')+'</div>'}
- s+='</div>';return s;
-}
-function printCurrentReport(){
- const c=db.children.find(x=>x.id===window.currentChild);if(!c)return;
- const w=window.open('','_blank');
- if(!w){modal('<h2>Impression</h2><p>Le navigateur bloque la nouvelle fenêtre. Autorise les fenêtres surgissantes pour ce site puis réessaie.</p><div class="actions"><button onclick="closeModal()">Fermer</button></div>');return}
- w.document.write(`<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Compte rendu - ${esc(c.name)}</title><style>${document.querySelector('style').innerHTML}</style></head><body><main>${reportHTML(c)}</main><script>window.onload=()=>setTimeout(()=>window.print(),300)<\/script></body></html>`);
- w.document.close();
-}
-function modal(content){document.getElementById('modalBox').innerHTML=content;document.getElementById('modal').classList.add('open')}
-function closeModal(){document.getElementById('modal').classList.remove('open')}
-function fileData(input){return new Promise(resolve=>{if(!input?.files?.[0])return resolve('');const r=new FileReader();r.onload=()=>resolve(r.result);r.readAsDataURL(input.files[0])})}
-function previewFile(input,id){const f=input.files?.[0];if(!f)return;const r=new FileReader();r.onload=()=>document.getElementById(id).innerHTML=`<img class="photo" src="${r.result}">`;r.readAsDataURL(f)}
-function exportData(){const blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='mon-petit-chemin-montessori-sauvegarde.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),500)}
-function importData(){const i=document.createElement('input');i.type='file';i.accept='.json,application/json';i.onchange=()=>{const r=new FileReader();r.onload=()=>{try{const x=JSON.parse(r.result);if(x.children&&x.materials){db=x;if(!db.tracking)db.tracking={};save();alert('Sauvegarde restaurée.')}else alert('Fichier non reconnu.')}catch(e){alert('Impossible de lire cette sauvegarde.')}};r.readAsText(i.files[0])};i.click()}
-function renderAll(){renderHome();if(document.getElementById('view-children').classList.contains('active'))renderChildren();if(document.getElementById('view-catalog').classList.contains('active'))renderCatalog();if(document.getElementById('view-observations').classList.contains('active'))renderObservations();if(document.getElementById('view-activities').classList.contains('active'))renderActivities();if(document.getElementById('view-notes').classList.contains('active'))renderNotes();if(document.getElementById('view-profile').classList.contains('active')&&window.currentChild)renderProfile(window.currentChild)}
+function openGalleryForm(){modal(`<h2>Ajouter une image 🌿</h2><form onsubmit="submitGallery(event)"><div class="formgrid"><div class="full"><label>Image</label><input id="gFile" type="file" accept="image/*" required></div><div><label>Titre</label><input id="gTitle"></div><div><label>Catégorie</label><select id="gCat"><option>Matériel</option><option>Ambiance</option><option>Activité</option><option>Enfant</option><option>Autre</option></select></div></div><div class="actions"><button type="button" onclick="closeModal()">Annuler</button><button class="primary">Ajouter</button></div></form>`)}
+async function submitGallery(e){e.preventDefault();const p=await fileData(gFile);if(!p)return;db.gallery.push({id:uid(),src:p,title:gTitle.value.trim(),cat:gCat.value});closeModal();save();showView('gallery')}
+function renderGallery(){galleryList.innerHTML=db.gallery.length?db.gallery.map(g=>`<div class="gallery-item"><img src="${g.src}"><strong>${esc(g.title||'Image')}</strong><div class="muted">${esc(g.cat)}</div><button class="small danger" style="margin-top:7px" onclick="deleteGallery('${g.id}')">Supprimer</button></div>`).join(''):'<div class="empty">Aucune image pour le moment.</div>'}
+function deleteGallery(id){if(confirm('Supprimer cette image ?')){db.gallery=db.gallery.filter(x=>x.id!==id);save()}}
+
+function reportHTML(c){const tr=db.tracking[c.id]||{};let s=`<div class="report"><div class="profile-top">${c.photo?`<img class="photo" src="${c.photo}">`:''}<div><h1>Compte rendu Montessori</h1><h2>${esc(c.name)}</h2><div>${esc(c.birth)} · ${esc(c.group)}</div></div></div>`;for(const area of areas){const mats=db.materials.filter(m=>m.area===area&&tr[m.id]&&tr[m.id].status!=='À présenter');if(!mats.length)continue;s+=`<div class="report-section"><h3>${esc(area)}</h3>`;mats.forEach(m=>{const t=tr[m.id];s+=`<div class="report-item"><strong>${esc(m.name)}</strong> <span class="badge ${statusClass(t.status)}">${esc(t.status)}</span><div class="meta">${esc(m.age)} · ${t.progress}%${t.concentration?' · '+esc(t.concentration):''}</div><div class="progress"><span style="width:${t.progress}%"></span></div>${t.observation?`<p>${esc(t.observation).replace(/\n/g,'<br>')}</p>`:''}</div>`});s+='</div>'}return s+'</div>'}
+function printCurrentReport(){const c=db.children.find(x=>x.id===currentChild);if(!c)return;const w=window.open('','_blank');if(!w){alert('Autorise les fenêtres surgissantes puis réessaie.');return}w.document.write(`<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Compte rendu - ${esc(c.name)}</title><style>${document.querySelector('style').innerHTML}</style></head><body><main>${reportHTML(c)}</main><script>window.onload=()=>setTimeout(()=>window.print(),300)<\/script></body></html>`);w.document.close()}
+
+function exportData(){const blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='mon-petit-chemin-montessori-sauvegarde.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),500)}
+function importData(){const i=document.createElement('input');i.type='file';i.accept='.json,application/json';i.onchange=()=>{const r=new FileReader();r.onload=()=>{try{const x=JSON.parse(r.result);if(x.children&&x.materials){db=x;db.observations??=[];db.activities??=[];db.notes??=[];db.gallery??=[];db.tracking??={};save();alert('Sauvegarde restaurée.')}else alert('Fichier non reconnu.')}catch(e){alert('Impossible de lire cette sauvegarde.')}};r.readAsText(i.files[0])};i.click()}
+
+function renderAll(){renderHome();const active=document.querySelector('.view.active')?.id;if(active==='view-children')renderChildren();if(active==='view-profile')renderProfile();if(active==='view-catalog')renderCatalog();if(active==='view-observations')renderObservations();if(active==='view-activities')renderActivities();if(active==='view-gallery')renderGallery();if(active==='view-notes')renderNotes()}
 showView('home');
 </script>
 </body>
